@@ -19,6 +19,7 @@ node_modules/
 # compiled build assets
 /dist/craft/filerev.json
 /dist/webroot/*
+!/dist/webroot/media
 !/dist/webroot/index.php
 
 # universal

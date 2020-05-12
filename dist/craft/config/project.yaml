@@ -1,4 +1,4 @@
-dateModified: 1589313858
+dateModified: 1589314520
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: $SYSTEM_SENDER_NAME
@@ -40,7 +40,17 @@ system:
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: ''
-  photoVolumeUid: null
+  defaultGroup: ''
+  photoSubpath: users
+  photoVolumeUid: 0d54b9db-2580-4605-b365-aba8423ae0e3
   requireEmailVerification: true
+volumes:
+  0d54b9db-2580-4605-b365-aba8423ae0e3:
+    handle: media
+    hasUrls: true
+    name: Media
+    settings:
+      path: '@webroot/media'
+    sortOrder: 1
+    type: craft\volumes\Local
+    url: /media
