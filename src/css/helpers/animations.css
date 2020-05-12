@@ -1,0 +1,19 @@
+:root {
+  --focus-animation-duration: .75s;
+}
+
+*:focus,
+*:focus::before,
+*:focus::after {
+  animation-duration: var(--focus-animation-duration);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *:focus,
+  *:focus::before,
+  *:focus::after {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,37 @@
+/*
+ * Show expanded abbreviations.
+ */
+abbr[title]::after {
+  content: " (" attr(title) ")";
+}
+
+/*
+ * Show full URLs.
+ */
+a[href]::after {
+  content: " (" attr(href) ")";
+}
+
+/*
+ * Don't show JavaScript or anchor links.
+ */
+a[href^="javascript:"]::after,
+a[href^="#"]::after {
+  content: "";
+}
+
+/*
+ * Don't break the page inside these elements.
+ */
+blockquote,
+pre {
+  page-break-inside: avoid;
+}
+
+/*
+ * Allow preformatted text to wrap when printed.
+ */
+code,
+pre {
+  white-space: pre-wrap;
+}

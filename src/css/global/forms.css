@@ -1,0 +1,227 @@
+/*
+  Relevant pseudo-classes
+  - :hover, :focus, :active
+  - :default
+  - :checked
+  - :indeterminate
+  - :enabled, :disabled
+  - :in-range, :out-of-range
+  - :valid, :invalid
+  - :user-invalid
+  - :read-only, :read-write
+  - :required, :optional
+  - :placeholder-shown
+ */
+
+/* === Text Inputs === */
+/*
+ * These inputs render as textfields in all browsers.
+ */
+[type="email"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"],
+textarea {
+  border: var(--base-input-border);
+}
+
+[type="email"][readonly],
+[type="number"][readonly],
+[type="password"][readonly],
+[type="search"][readonly],
+[type="tel"][readonly],
+[type="text"][readonly],
+[type="url"][readonly],
+textarea[readonly] {
+
+}
+
+[type="email"]:disabled,
+[type="number"]:disabled,
+[type="password"]:disabled,
+[type="search"]:disabled,
+[type="tel"]:disabled,
+[type="text"]:disabled,
+[type="url"]:disabled,
+textarea:disabled {
+
+}
+
+[type="email"]:focus,
+[type="number"]:focus,
+[type="password"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="text"]:focus,
+[type="url"]:focus,
+textarea:focus {
+
+}
+
+
+
+
+
+/* === Date and Time Inputs === */
+/*
+ * These inputs render as textfields in some browsers and select menus in other
+ * browsers. Keep this in mind when styling.
+ */
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="time"],
+[type="week"] {
+  border: var(--base-input-border);
+}
+
+[type="date"][readonly],
+[type="datetime-local"][readonly],
+[type="month"][readonly],
+[type="time"][readonly],
+[type="week"][readonly] {
+
+}
+
+[type="date"]:disabled,
+[type="datetime-local"]:disabled,
+[type="month"]:disabled,
+[type="time"]:disabled,
+[type="week"]:disabled {
+
+}
+
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="time"]:focus,
+[type="week"]:focus {
+
+}
+
+
+
+
+
+/* === Select Menus === */
+select {
+  border: var(--base-input-border);
+}
+
+select:disabled {
+
+}
+
+select:focus {
+
+}
+
+
+
+
+
+/* === Buttons === */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  display: inline-block;
+  border: var(--base-input-border);
+}
+
+button:hover,
+[type="button"]:hover,
+[type="reset"]:hover,
+[type="submit"]:hover,
+button:focus,
+[type="button"]:focus,
+[type="reset"]:focus,
+[type="submit"]:focus {
+
+}
+
+button:disabled,
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
+
+}
+
+
+
+
+
+/* === Image Inputs === */
+/*
+ * 1. Set fallback in case image doesn't load.
+ */
+[type="image"] {
+  background-color: #000; /* 1 */
+  color: #FFF; /* 1 */
+}
+
+[type="image"]:hover,
+[type="image"]:focus {
+
+}
+
+[type="image"]:disabled {
+
+}
+
+
+
+
+
+/* === File Inputs === */
+[type="file"] {
+
+}
+
+::-webkit-file-upload-button {
+  border: var(--base-input-border);
+}
+/* ...continued (browser-specific) */
+::-ms-browse {
+  border: var(--base-input-border);
+}
+
+[type="file"]:focus {
+
+}
+
+:focus::-webkit-file-upload-button {
+
+}
+/* ...continued (browser-specific) */
+:focus::-ms-browse {
+
+}
+
+[type="file"]:disabled {
+
+}
+
+:disabled::-webkit-file-upload-button {
+
+}
+/* ...continued (browser-specific) */
+:disabled::-ms-browse {
+
+}
+
+
+
+
+
+/* === Range Inputs === */
+[type="range"] {
+
+}
+
+[type="range"]:disabled {
+
+}

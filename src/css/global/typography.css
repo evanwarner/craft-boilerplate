@@ -1,0 +1,12 @@
+/* === Base Settings === */
+body {
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  font-family: var(--primary-font);
+}
+
+::selection {
+  background-color: var(--base-text-color);
+  color: var(--base-bg-color);
+  text-shadow: none;
+}

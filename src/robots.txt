@@ -1,0 +1,11 @@
+<!-- @if NODE_ENV='production' -->
+Sitemap: http://www.example.com/sitemap.xml
+<!-- @endif -->
+
+User-agent: *
+<!-- @if NODE_ENV!='production' -->
+Disallow: /
+<!-- @endif -->
+Disallow: /assets/
+Disallow: /img/
+Disallow: /*?*

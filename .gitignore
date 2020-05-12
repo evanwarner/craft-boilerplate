@@ -1,0 +1,28 @@
+# Node packages
+node_modules/
+
+# Composer
+/dist/craft/vendor/
+
+# sensitive info
+/dist/craft/*.env
+!/dist/craft/example.env
+/dist/craft/config/license.key
+/database-backups/
+/dbbackup.sh
+
+# nonessential Craft files
+/dist/craft/storage/backups/
+/dist/craft/storage/logs/
+/dist/craft/storage/runtime/
+
+# compiled build assets
+/dist/craft/filerev.json
+/dist/webroot/*
+!/dist/webroot/index.php
+
+# universal
+.DS_Store
+._*
+Thumbs.db
+*.log

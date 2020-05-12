@@ -1,0 +1,46 @@
+dateModified: 1589313858
+email:
+  fromEmail: $SYSTEM_EMAIL
+  fromName: $SYSTEM_SENDER_NAME
+  replyToEmail: $SYSTEM_REPLY_TO_EMAIL
+  template: ''
+  transportSettings:
+    command: ''
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  9cf815f5-e99d-43d5-8de9-9fe15de0eee5:
+    name: Common
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+siteGroups:
+  a1992095-17d3-47cd-a6ac-e268f94d2994:
+    name: 'Primary Site'
+sites:
+  f5b61d9c-cbbc-42fc-ad49-6f40d28f7900:
+    baseUrl: $SITE_URL
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: 'Primary Site'
+    primary: true
+    siteGroup: a1992095-17d3-47cd-a6ac-e268f94d2994
+    sortOrder: 1
+system:
+  edition: pro
+  live: true
+  name: $SYSTEM_NAME
+  schemaVersion: 3.4.10
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true
