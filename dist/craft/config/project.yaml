@@ -1,4 +1,4 @@
-dateModified: 1589314520
+dateModified: 1589314686
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: $SYSTEM_SENDER_NAME
@@ -19,6 +19,39 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+sections:
+  6cd4b061-54b8-4957-a1d6-36d9b8bc53af:
+    enableVersioning: true
+    entryTypes:
+      82a4bbd1-2987-42f8-9198-dd14205d7593:
+        handle: homepage
+        hasTitleField: false
+        name: Homepage
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: homepage
+    name: Homepage
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      f5b61d9c-cbbc-42fc-ad49-6f40d28f7900:
+        enabledByDefault: true
+        hasUrls: true
+        template: _index
+        uriFormat: __home__
+    type: single
 siteGroups:
   a1992095-17d3-47cd-a6ac-e268f94d2994:
     name: 'Primary Site'
