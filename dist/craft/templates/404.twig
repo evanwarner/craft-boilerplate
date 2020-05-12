@@ -1,10 +1,11 @@
-{% set title = 'Page Not Found' %}
+{% set displayTitle = 'Page Not Found' %}
 {% set bodyClasses = ['ErrorPage'] %}
+
 {% extends '_layouts/main' %}
 
 
 
 {% block content %}
-  <h1>{{ title }}</h1>
+  <h1>{{ displayTitle }}</h1>
   <p>The page you are trying to view does not exist.</p>
 {% endblock %}

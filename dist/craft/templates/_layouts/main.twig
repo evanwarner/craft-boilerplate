@@ -40,12 +40,12 @@
   {% if entry is defined and entry.type == 'homepage' %}
     {% set metaTitle = siteName %}
   {% else %}
-    {% set metaTitle = metaTitle|default(entry.title|default('')) ~ ' | ' ~ siteName %}
+    {% set metaTitle = (metaTitle ?? displayTitle ?? entry.title ?? '') ~ ' | ' ~ siteName %}
   {% endif %}
   <title>{{ metaTitle }}</title>
 
   {# TODO: meta descriptions #}
-  {% set metaDescription = (entry is defined) ? '' : metaDescription|default('') %}
+  {% set metaDescription = metaDescription ?? '' %}
   <meta name="description" content="{{ metaDescription }}">
 
   <meta name="referrer" content="unsafe-url">

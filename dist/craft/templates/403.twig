@@ -1,10 +1,11 @@
-{% set title = 'Forbidden' %}
+{% set displayTitle = 'Forbidden' %}
 {% set bodyClasses = ['ErrorPage'] %}
+
 {% extends '_layouts/main' %}
 
 
 
 {% block content %}
-  <h1>{{ title }}</h1>
+  <h1>{{ displayTitle }}</h1>
   <p>Access to this page is not allowed.</p>
 {% endblock %}
