@@ -1,4 +1,4 @@
-dateModified: 1589314686
+dateModified: 1589315189
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: $SYSTEM_SENDER_NAME
@@ -10,6 +10,50 @@ email:
 fieldGroups:
   9cf815f5-e99d-43d5-8de9-9fe15de0eee5:
     name: Common
+  a7145a7e-c7c8-49cd-8ce8-22971c1b87ba:
+    name: Images
+fields:
+  352696ab-240e-485b-8ed7-6757acb5dd64:
+    contentColumnType: text
+    fieldGroup: a7145a7e-c7c8-49cd-8ce8-22971c1b87ba
+    handle: caption
+    instructions: 'A caption that may display next to the image.'
+    name: Caption
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Basic.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  45f71c8f-75d7-40dc-a6f4-3fca21830503:
+    contentColumnType: text
+    fieldGroup: a7145a7e-c7c8-49cd-8ce8-22971c1b87ba
+    handle: altText
+    instructions: 'Text that is read by screen readers or shown if an image fails to load.'
+    name: 'Alt Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
 plugins:
   assetrev:
     edition: standard
@@ -79,6 +123,19 @@ users:
   requireEmailVerification: true
 volumes:
   0d54b9db-2580-4605-b365-aba8423ae0e3:
+    fieldLayouts:
+      fd2774dd-977c-49d1-815d-06d2793d4dae:
+        tabs:
+          -
+            fields:
+              352696ab-240e-485b-8ed7-6757acb5dd64:
+                required: false
+                sortOrder: 2
+              45f71c8f-75d7-40dc-a6f4-3fca21830503:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
     handle: media
     hasUrls: true
     name: Media
