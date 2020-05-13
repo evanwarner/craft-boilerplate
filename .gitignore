@@ -23,6 +23,7 @@ node_modules/
 !/dist/webroot/index.php
 
 # universal
+.idea
 .DS_Store
 ._*
 Thumbs.db
