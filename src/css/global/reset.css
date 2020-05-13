@@ -1,0 +1,288 @@
+/* === Viewport === */
+/*
+ * Tell browsers to always display at the device size.
+ */
+@-ms-viewport {
+  zoom: 1;
+  width: device-width;
+}
+
+@-o-viewport {
+  zoom: 1;
+  width: device-width;
+}
+
+@viewport {
+  zoom: 1;
+  width: device-width;
+}
+
+/*
+ * Fix IE bug triggered by setting the viewport via @-ms-viewport rules.
+ */
+html {
+  -ms-overflow-style: scrollbar;
+}
+
+
+
+
+
+/* === Layout === */
+/*
+ * Reset box model.
+ */
+body,
+dd,
+dl,
+dt,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+ol,
+ul {
+  padding-left: 1.5em;
+  margin: 0;
+}
+
+blockquote {
+  padding: 0 2em;
+  margin: 0;
+}
+
+hr {
+  border: .5px solid currentColor;
+}
+
+
+
+/*
+ * Remove excess space below element.
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+
+
+/*
+ * Fix IE11.
+ */
+main {
+  display: block;
+}
+
+
+
+/*
+ * Constrain images to their containers by default.
+ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+
+/* === Object States === */
+/*
+ * Hide focus outline.
+ * TODO: Be sure to declare a noticable style for all focused elements!
+ */
+:focus {
+  outline: 0;
+}
+
+
+
+/*
+ * Ensure hidden.
+ */
+[hidden] {
+  display: none !important;
+}
+
+
+
+
+
+/* === Typography === */
+/*
+ * Prevent font size changes on device orientation change.
+ */
+body {
+  text-size-adjust: none;
+}
+
+
+
+/*
+ * Remove opinionated user agent styles.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: 1em;
+}
+
+b {
+  font-weight: inherit;
+}
+
+address,
+cite,
+i {
+  font-style: inherit;
+}
+
+ins,
+u {
+  text-decoration: none;
+}
+
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+
+abbr[title] {
+  text-decoration: none;
+  cursor: help;
+}
+
+pre {
+  overflow: scroll;
+  font-family: inherit;
+}
+
+code {
+  tab-size: 2;
+}
+
+
+
+/*
+ * Ensure a monospaced font.
+ */
+code,
+kbd,
+samp {
+  font-family: var(--monospace-font);
+}
+
+
+
+/*
+ * Ensure preserved whitespace.
+ */
+code,
+pre {
+  white-space: pre;
+}
+
+
+
+/*
+ * Prevent sub- and superscript from affecting line height.
+ */
+sub,
+sup {
+  position: relative;
+  top: -.4em;
+  vertical-align: baseline;
+}
+
+sub {
+  top: .3em;
+}
+
+small {
+  font-size: .8em;
+}
+
+
+
+/*
+ * At the moment, no browser allows CSS generated content to be selected. For
+ * things like quotation marks, which are a vital part of the content they
+ * appear in, this is detrimental behavior when trying to copy text. Despite
+ * the spec(1) for the <q> element dictating that no quotation marks should
+ * appear directly before or after the element, I believe quotation marks should
+ * be part of the page's content. If the user-select property(2) ever allows
+ * selection of generated content, these rules can allow quote generation again.
+ *
+ * References:
+ * 1: https://www.w3.org/TR/html52/textlevel-semantics.html#the-q-element
+ * 2: https://drafts.csswg.org/css-ui-4/#content-selection
+ */
+q::before {
+  content: no-open-quote;
+}
+
+q::after {
+  content: no-close-quote;
+}
+
+
+
+
+
+/* === Tables === */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+/*
+ * Align headers with the rest of the table content.
+ */
+th {
+  text-align: left;
+}
+
+
+
+
+
+/* === Interaction === */
+/*
+ * Eliminate touch delay in certain browsers.
+ */
+[role="button"],
+a {
+  touch-action: manipulation;
+}
+
+
+
+
+
+/* === Misc === */
+@media (inverted-colors: inverted) {
+  img {
+    filter: invert(1);
+  }
+}

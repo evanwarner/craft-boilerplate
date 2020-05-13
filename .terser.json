@@ -1,0 +1,7 @@
+{
+  "ecma": 5,
+  "output": {
+    "comments": "/(?:^!|@(?:license|preserve|cc_on))/",
+    "quote_style": 3
+  }
+}

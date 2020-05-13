@@ -1,0 +1,146 @@
+dateModified: 1589315189
+email:
+  fromEmail: $SYSTEM_EMAIL
+  fromName: $SYSTEM_SENDER_NAME
+  replyToEmail: $SYSTEM_REPLY_TO_EMAIL
+  template: ''
+  transportSettings:
+    command: ''
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  9cf815f5-e99d-43d5-8de9-9fe15de0eee5:
+    name: Common
+  a7145a7e-c7c8-49cd-8ce8-22971c1b87ba:
+    name: Images
+fields:
+  352696ab-240e-485b-8ed7-6757acb5dd64:
+    contentColumnType: text
+    fieldGroup: a7145a7e-c7c8-49cd-8ce8-22971c1b87ba
+    handle: caption
+    instructions: 'A caption that may display next to the image.'
+    name: Caption
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Basic.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  45f71c8f-75d7-40dc-a6f4-3fca21830503:
+    contentColumnType: text
+    fieldGroup: a7145a7e-c7c8-49cd-8ce8-22971c1b87ba
+    handle: altText
+    instructions: 'Text that is read by screen readers or shown if an image fails to load.'
+    name: 'Alt Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+sections:
+  6cd4b061-54b8-4957-a1d6-36d9b8bc53af:
+    enableVersioning: true
+    entryTypes:
+      82a4bbd1-2987-42f8-9198-dd14205d7593:
+        handle: homepage
+        hasTitleField: false
+        name: Homepage
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: homepage
+    name: Homepage
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      f5b61d9c-cbbc-42fc-ad49-6f40d28f7900:
+        enabledByDefault: true
+        hasUrls: true
+        template: _index
+        uriFormat: __home__
+    type: single
+siteGroups:
+  a1992095-17d3-47cd-a6ac-e268f94d2994:
+    name: 'Primary Site'
+sites:
+  f5b61d9c-cbbc-42fc-ad49-6f40d28f7900:
+    baseUrl: $SITE_URL
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: 'Primary Site'
+    primary: true
+    siteGroup: a1992095-17d3-47cd-a6ac-e268f94d2994
+    sortOrder: 1
+system:
+  edition: pro
+  live: true
+  name: $SYSTEM_NAME
+  schemaVersion: 3.4.10
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: ''
+  photoSubpath: users
+  photoVolumeUid: 0d54b9db-2580-4605-b365-aba8423ae0e3
+  requireEmailVerification: true
+volumes:
+  0d54b9db-2580-4605-b365-aba8423ae0e3:
+    fieldLayouts:
+      fd2774dd-977c-49d1-815d-06d2793d4dae:
+        tabs:
+          -
+            fields:
+              352696ab-240e-485b-8ed7-6757acb5dd64:
+                required: false
+                sortOrder: 2
+              45f71c8f-75d7-40dc-a6f4-3fca21830503:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    handle: media
+    hasUrls: true
+    name: Media
+    settings:
+      path: '@webroot/media'
+    sortOrder: 1
+    type: craft\volumes\Local
+    url: /media

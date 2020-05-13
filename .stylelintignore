@@ -1,0 +1,8 @@
+# tools
+node_modules/**/*.*css
+
+# vendor code
+src/css/vendor/**/*.css
+
+# build files
+dist/**/*.*css

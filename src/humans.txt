@@ -1,0 +1,14 @@
+# TEAM
+  Evan Warner - Design and Development
+    Website: https://www.evanwarner.com
+    Twitter: @evanwarner
+    From: Bend, OR
+
+# THANKS
+
+# TYPEFACES
+
+# TECHNOLOGY
+  Standards: HTML5, CSS3, ES5
+  Components: [CMS, plugins, front-end libraries and plugins]
+  Software: VS Code, Affinity Designer

@@ -1,0 +1,36 @@
+/* === Media Queries === */
+/* @custom-media --custom-name (min-width: 0); */
+
+
+
+
+
+:root {
+  /* === Colors === */
+  --base-bg-color: #FFF;
+  --base-text-color: #000;
+
+
+
+
+
+  /* === Fonts === */
+  --primary-font: serif;
+  --monospace-font: monospace;
+
+
+
+
+
+  /* === Sizes === */
+
+
+
+
+
+  /* === Z-Indexes === */
+  --z-behind: -1;
+  --z-base: 0;
+  --z-bump: 5;
+  --z-top: 100;
+}

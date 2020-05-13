@@ -1,0 +1,9 @@
+# tools
+node_modules/**/*.js
+postcss.config.js
+
+# vendor code
+src/js/vendor/**/*.js
+
+# build files
+dist/**/*.js

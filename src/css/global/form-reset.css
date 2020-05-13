@@ -1,0 +1,272 @@
+/*
+ * Reset box model.
+ */
+form,
+fieldset,
+legend {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+
+
+/*
+ * 1. Undo dimming in Mobile Safari and iOS Chrome.
+ * 2. Reset text color.
+ *    Safari sets text color on disabled elements in a slightly dimmed way that
+ *    can only be overridden using -webkit-text-fill-color. Not worth it.
+ *
+ * Newer browsers have a built in state for disabled elements that doesn't show
+ * in the style stack. It seems to come from the appearance property, because
+ * setting {appearance: none;} makes :disabled look just like default.
+ */
+:disabled {
+  opacity: 1; /* 1 */
+  color: inherit; /* 2 */
+}
+/* ...continued (browser-specific) */
+:disabled::-webkit-file-upload-button {
+  opacity: 1; /* 1 */
+  color: inherit; /* 2 */
+}
+/* ...continued (browser-specific) */
+:disabled::-ms-browse {
+  color: inherit; /* 2 */
+}
+
+
+
+/*
+ * Reset background color in Firefox and IE.
+ */
+[type="email"]:disabled,
+[type="number"]:disabled,
+[type="password"]:disabled,
+[type="search"]:disabled,
+[type="tel"]:disabled,
+[type="text"]:disabled,
+[type="url"]:disabled,
+textarea:disabled,
+[type="date"]:disabled,
+[type="datetime-local"]:disabled,
+[type="month"]:disabled,
+[type="time"]:disabled,
+[type="week"]:disabled,
+select:disabled {
+  background-color: var(--disabled-input-bg);
+}
+
+
+
+/*
+ * 1. Remove highlight in Firefox.
+ * 2. Remove highlight in IE.
+ */
+:invalid {
+  outline: 0; /* 1 */
+  box-shadow: none; /* 2 */
+}
+
+
+
+/*
+ * Inherit type styles from the surrounding context.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 1em;
+}
+/* ...continued (browser-specific) */
+::-webkit-file-upload-button {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 1em;
+}
+/* ...continued (browser-specific) */
+::-ms-browse {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 1em;
+}
+
+
+
+/*
+ * Reset visual differences.
+ * This can't be used to reset date and time inputs or else iOS browsers will
+ * show broken looking textfields that still trigger select menus.
+ */
+[type="email"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"],
+textarea {
+  appearance: none;
+  border-radius: 0;
+}
+
+
+
+/*
+ * 1. Don't allow horizontal resizing.
+ * 2. Remove default scrollbar in IE.
+ */
+textarea {
+  resize: vertical; /* 1 */
+  overflow: auto; /* 2 */
+}
+
+
+
+/*
+ * Eliminate touch delay in certain browsers.
+ */
+select {
+  touch-action: manipulation;
+}
+
+
+
+/*
+ * 1. Reset visual differences.
+ * 2. Fix IE.
+ * 3. Eliminate touch delay in certain browsers.
+ */
+button,
+[type="button"],
+[type="image"],
+[type="reset"],
+[type="submit"] {
+  appearance: none; /* 1 */
+  padding: 0; /* 1 */
+  border-radius: 0; /* 1 */
+  overflow: visible; /* 2 */
+  touch-action: manipulation; /* 3 */
+}
+/* ...continued (browser-specific) */
+::-webkit-file-upload-button {
+  appearance: none; /* 1 */
+  border-radius: 0; /* 1 */
+}
+/* ...continued (browser-specific) */
+::-ms-browse {
+  appearance: none; /* 1 */
+  border-radius: 0; /* 1 */
+}
+
+
+
+/*
+ * Indicate unclickable status.
+ */
+select:disabled,
+[type="checkbox"]:disabled,
+[type="radio"]:disabled,
+button:disabled,
+[type="button"]:disabled,
+[type="image"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled,
+[type="file"]:disabled {
+  cursor: not-allowed;
+}
+/* ...continued (browser-specific) */
+[type="file"]:disabled::-webkit-file-upload-button {
+  cursor: not-allowed;
+}
+/* ...continued (browser-specific) */
+[type="file"]:disabled::-ms-browse {
+  cursor: not-allowed;
+}
+
+
+
+/*
+ * Remove extra button space in Firefox.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+
+
+/*
+ * Remove excess padding on search inputs.
+ */
+::-webkit-search-decoration {
+  appearance: none;
+}
+
+
+
+
+
+/* === Optional Resets === */
+
+/*
+ * Hide results button on search inputs.
+ * Chrome & Opera use -decoration, Safari uses -button.
+ */
+::-webkit-search-results-decoration,
+::-webkit-search-results-button {
+  /* appearance: none; */
+}
+
+
+
+/*
+ * Hide input spinners in Webkit browsers.
+ */
+::-webkit-inner-spin-button {
+  /* appearance: none; */
+  /* margin: 0; */
+}
+
+
+
+/*
+ * Hide number spinners in Firefox.
+ */
+[type="number"] {
+  /* appearance: textfield; */
+}
+
+
+
+/*
+ * Hide date input calendar pickers.
+ * Use this when implementing custom date pickers.
+ */
+::-webkit-calendar-picker-indicator {
+  /* appearance: none; */
+}
+
+
+
+
+
+/* === Potential Resets === */
+
+/*
+ * Remove padding in IE.
+ */
+[type="range"] {
+  /* padding: 0; */
+}
