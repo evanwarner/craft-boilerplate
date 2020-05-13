@@ -18,18 +18,18 @@ Project description
 
 ## Getting Started
 1. `$ npm install` to install necessary components
-1. Duplicate `/dist/[craft]/.env.example` as `/dist/[craft]/.env` (leave the original unedited in Git)
+1. Duplicate `/dist/[craft]/example.env` as `/dist/[craft]/.env` (leave the original unedited in Git)
 1. Set up a host for local development and configure the `SITE_URL` in `/dist/[craft]/.env`
 1. Create an empty MySQL database and a user for the database.
     1. Set the database information in `/dist/[craft]/.env`.
-    1. Duplicate `/dbbackup-sample.sh` as `dbbackup.sh` (leave the original unedited in Git)
+    1. Duplicate `/dbbackup-example.sh` as `dbbackup.sh` (leave the original unedited in Git)
     1. Set the database information in `/dbbackup.sh`.
-1. Sync information from the current master version of the website (this may be dev, staging or production depending on the current state of the project).
+1. Sync information from the current master version of the website (this may be dev, staging, or production depending on the current state of the project).
     1. Populate the database using an up to date DB dump.
     1. Ensure `DB_TABLE_PREFIX` is set appropriately in `/dist/[craft]/.env`
     1. Obtain and set the `SECURITY_KEY` in `/dist/[craft]/.env`
     1. Obtain `/dist/[craft]/config/license.key`
-    1. Obtain the `/dist/[webroot]/assets` folder
+    1. Obtain the `/dist/[webroot]/media` folder
 1. `$ npm run dev` to compile source files
 
 
