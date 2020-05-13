@@ -2,13 +2,14 @@
   "name": "evanwarner/craft-boilerplate",
   "description": "A Craft CMS boilerplate build.",
   "type": "project",
-  "license": "MIT",
+  "license": "Unlicense",
   "scripts": {
     "post-create-project-cmd": [
       "cp ./dist/craft/example.env ./dist/craft/.env",
       "cp ./dbbackup-example.sh ./dbbackup.sh",
       "rm composer.json",
       "rm CHANGELOG.md",
+      "rm LICENSE.md",
       "mv README.md SETUP.md",
       "mv README-site.md README.md",
       "npm i",
