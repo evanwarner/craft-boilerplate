@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.0.3] - 2020-05-13
+### Changed
+- Switched to Unlicense
+
 ## [1.0.2] - 2020-05-13
 ### Added
 - Added an MIT license
