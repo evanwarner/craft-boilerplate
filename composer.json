@@ -2,6 +2,7 @@
   "name": "evanwarner/craft-boilerplate",
   "description": "A Craft CMS boilerplate build.",
   "type": "project",
+  "license": "MIT",
   "scripts": {
     "post-create-project-cmd": [
       "cp ./dist/craft/example.env ./dist/craft/.env",
