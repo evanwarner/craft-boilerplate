@@ -74,6 +74,7 @@ The following should be completed immediately after generating a new project. On
 1. Create a `SECURITY_KEY` in `/dist/[craft]/.env`
     - `$ cd dist/[craft] && ./craft setup/security-key` (or generate one manually)
 1. Run the Craft installation at `http://[local hostname]/manage`
+1. In **Settings > General** set the system **Time Zone** appropriately
 1. In **Settings > Sites** set the name of the site group and site as desired
 
 #### GIT Development Branch
