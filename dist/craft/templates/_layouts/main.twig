@@ -37,7 +37,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {# TODO: meta titles #}
-  {% if entry is defined and entry.type == 'homepage' %}
+  {% if entry is defined and entry and entry.type == 'homepage' %}
     {% set metaTitle = siteName %}
   {% else %}
     {% set metaTitle = (metaTitle ?? displayTitle ?? entry.title ?? '') ~ ' | ' ~ siteName %}
@@ -93,7 +93,7 @@
   {{ head() }}
 </head>
 {% set bodyClasses = bodyClasses|default([]) %}
-{% if entry is defined %}
+{% if entry is defined and entry %}
   {% set bodyClasses = bodyClasses|merge([entry.type|ucfirst ~ 'Page']) %}
 {% endif %}
 <body class="{{ bodyClasses|unique|join(' ') }}">
