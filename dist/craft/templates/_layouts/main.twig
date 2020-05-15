@@ -87,7 +87,7 @@
 </head>
 {% set bodyClasses = bodyClasses|default([]) %}
 {% if entry is defined %}
-  {% set bodyClasses = bodyClasses|merge([entry.type | capitalize ~ 'Page']) %}
+  {% set bodyClasses = bodyClasses|merge([entry.type|ucfirst ~ 'Page']) %}
 {% endif %}
 <body class="{{ bodyClasses|join(' ') }}">
   {{ beginBody() }}
