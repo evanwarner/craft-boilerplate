@@ -48,7 +48,9 @@
   {% set metaDescription = metaDescription ?? '' %}
   <meta name="description" content="{{ metaDescription }}">
 
-  <meta name="referrer" content="unsafe-url">
+  {% block referrer %}
+    <meta name="referrer" content="unsafe-url">
+  {% endblock %}
   <meta name="format-detection" content="telephone=no">
 
   <meta property="og:type" content="website">
