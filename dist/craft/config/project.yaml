@@ -1,4 +1,4 @@
-dateModified: 1589315189
+dateModified: 1589569070
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: $SYSTEM_SENDER_NAME
@@ -12,6 +12,8 @@ fieldGroups:
     name: Common
   a7145a7e-c7c8-49cd-8ce8-22971c1b87ba:
     name: Images
+  d2f7e89b-4d7d-4548-8549-f4261cc069f4:
+    name: 'Error Pages'
 fields:
   352696ab-240e-485b-8ed7-6757acb5dd64:
     contentColumnType: text
@@ -54,6 +56,108 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  8af30969-9993-4bd0-9983-003e5634c274:
+    contentColumnType: text
+    fieldGroup: d2f7e89b-4d7d-4548-8549-f4261cc069f4
+    handle: errorText
+    instructions: ''
+    name: 'Error Text'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Basic.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  b2c51e1a-ef5d-4a48-a6f3-8858d2fb91dc:
+    contentColumnType: string
+    fieldGroup: d2f7e89b-4d7d-4548-8549-f4261cc069f4
+    handle: httpStatus
+    instructions: 'The HTTP status code this page should display for.'
+    name: 'HTTP Status'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '400 - Bad Request'
+            -
+              - value
+              - '400'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '403 - Forbidden'
+            -
+              - value
+              - '403'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '404 - Not found'
+            -
+              - value
+              - '404'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '410 - Gone'
+            -
+              - value
+              - '410'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '500 - Internal Server Error'
+            -
+              - value
+              - '500'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '503 - Service Unavailable'
+            -
+              - value
+              - '503'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
 plugins:
   assetrev:
     edition: standard
@@ -64,6 +168,51 @@ plugins:
     enabled: true
     schemaVersion: 2.3.0
 sections:
+  4bbc4374-2874-42b5-837e-3e7ded6ff886:
+    enableVersioning: true
+    entryTypes:
+      40af382c-1249-4945-8040-93466fc00aeb:
+        fieldLayouts:
+          6cfff2b2-8ba5-402f-9c21-1ddaf511fc07:
+            tabs:
+              -
+                fields:
+                  8af30969-9993-4bd0-9983-003e5634c274:
+                    required: true
+                    sortOrder: 2
+                  b2c51e1a-ef5d-4a48-a6f3-8858d2fb91dc:
+                    required: true
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
+        handle: httpError
+        hasTitleField: true
+        name: 'HTTP Error'
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+    handle: errorPages
+    name: 'Error Pages'
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      f5b61d9c-cbbc-42fc-ad49-6f40d28f7900:
+        enabledByDefault: true
+        hasUrls: true
+        template: _error
+        uriFormat: '{httpStatus}'
+    type: channel
   6cd4b061-54b8-4957-a1d6-36d9b8bc53af:
     enableVersioning: true
     entryTypes:
