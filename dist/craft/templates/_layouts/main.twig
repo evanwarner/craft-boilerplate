@@ -11,7 +11,7 @@
   'object-src': '\'none\'',
   'form-action': '\'self\'',
   'frame-ancestors': '\'self\'',
- } | merge(cspDirectives ?? {}) %}
+} | merge(cspDirectives ?? {}) %}
 
 {% set headers = {
   'Content-Security-Policy': cspDirectives,
@@ -31,7 +31,7 @@
 
 
 <!DOCTYPE html>
-<html class="no-js" lang="{{ currentSite.language|slice(0, 2) }}">
+<html class="no-js" lang="{{ currentSite.language | slice(0, 2) }}">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,7 +64,7 @@
   <meta property="og:site_name" content="{{ siteName }}">
   <meta property="og:title" content="{{ metaTitle }}">
   <meta property="og:description" content="{{ metaDescription }}">
-  <meta property="og:locale" content="{{ currentSite.language|slice(0, 2) }}">
+  <meta property="og:locale" content="{{ currentSite.language | slice(0, 2) }}">
   <meta property="og:image" content="">
 
   <meta name="twitter:card" content="summary">
@@ -95,11 +95,11 @@
   <link rel="stylesheet" href="{{ rev('css/main.css') }}" media="screen">
   {{ head() }}
 </head>
-{% set bodyClasses = bodyClasses|default([]) %}
+{% set bodyClasses = bodyClasses | default([]) %}
 {% if entry is defined and entry %}
-  {% set bodyClasses = bodyClasses|merge([entry.type|ucfirst ~ 'Page']) %}
+  {% set bodyClasses = bodyClasses | merge([entry.type | ucfirst ~ 'Page']) %}
 {% endif %}
-<body class="{{ bodyClasses|unique|join(' ') }}">
+<body class="{{ bodyClasses | unique | join(' ') }}">
   {{ beginBody() }}
   <a class="SkipLink u-visuallyHidden u-focusable" href="#main-content" title="Jump to the main page content">Skip to content</a>
 
