@@ -6,6 +6,6 @@ User-agent: *
 <!-- @if NODE_ENV!='production' -->
 Disallow: /
 <!-- @endif -->
-Disallow: /assets/
+Disallow: /media/
 Disallow: /img/
 Disallow: /*?*
