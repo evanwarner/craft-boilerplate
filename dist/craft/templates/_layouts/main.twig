@@ -51,6 +51,11 @@
   {% block referrer %}
     <meta name="referrer" content="unsafe-url">
   {% endblock %}
+  {% block robots %}
+    {% if getenv('ENVIRONMENT') == 'staging' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+  {% endblock %}
   <meta name="format-detection" content="telephone=no">
 
   <meta property="og:type" content="website">
