@@ -89,7 +89,7 @@
 {% if entry is defined %}
   {% set bodyClasses = bodyClasses|merge([entry.type|ucfirst ~ 'Page']) %}
 {% endif %}
-<body class="{{ bodyClasses|join(' ') }}">
+<body class="{{ bodyClasses|unique|join(' ') }}">
   {{ beginBody() }}
   <a class="SkipLink u-visuallyHidden u-focusable" href="#main-content" title="Jump to the main page content">Skip to content</a>
 
