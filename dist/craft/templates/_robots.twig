@@ -1,0 +1,11 @@
+{% header 'Content-Type: text/plain' %}
+
+User-agent: *
+{% if getenv('ENVIRONMENT') != 'production' %}
+Disallow: /
+{% endif %}
+Disallow: /media/
+Disallow: /img/
+Disallow: /*?*
+
+Sitemap: {{ siteUrl }}sitemap.xml
