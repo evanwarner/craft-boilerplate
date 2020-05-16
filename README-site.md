@@ -93,7 +93,7 @@ These scripts are used when a build of the project is ready for release.
 
 `$ npm run bump`, `$ npm run bump:minor`, and `$ npm run bump:major` should _only_ be run while on the `develop` branch. They will bump the project's version number (at a patch, minor, or major level, respectively), commit the `package*.json` files, and push the commit to all remotes.
 
-`$ npm run mergeversion` should usually be run immediately after one of the `bump` scripts. It will merge the `develop` branch into `master`, tag a new version, then push the new tag and `master` branch to all remotes. Lastly it will re-checkout `develop` to ensure subsequent work isn't accidentally done on `master`. 
+`$ npm run mergeversion` should usually be run immediately after one of the `bump` scripts. It will merge the `develop` branch into `master`, tag a new version, then push the new tag and `master` branch to all remotes. Lastly it will re-checkout `develop` to ensure subsequent work isn't accidentally done on `master`.
 
 
 ---
