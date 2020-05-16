@@ -1,7 +1,11 @@
 # Changelog
 
 ## [Unreleased]
-No unreleased changes.
+### Added
+- There is now a `manifest.json` file to configure
+
+### Changed
+- Established a better starting point for providing favicon and home screen icons
 
 ## 1.1.0 - 2020-05-15
 ### Added

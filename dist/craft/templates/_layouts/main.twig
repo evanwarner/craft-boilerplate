@@ -72,17 +72,13 @@
   <meta name="twitter:site" content="@">
   <meta name="twitter:creator" content="@">
 
-  {# TODO: favicons #}
+  {# TODO: generate a 32x32 favicon.ico in webroot #}
+  {# TODO: generate SVG favicon #}<link rel="icon" href="/favicon.svg">
+  {# TODO: generate SVG pinned tab icon (and color) #}<link rel="mask-icon" href="/mask-icon.svg" color="#FFF">
+  {# TODO: generate Web Clip icon #}<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  {# TODO: generate Windows Tile icons (and tile color) #}<meta name="msapplication-config" content="/ieconfig.xml">
+  {# TODO: generate Android home screen icons (and theme colors) #}<link rel="manifest" href="/manifest.json">
   <meta name="apple-mobile-web-app-title" content="{{ siteName }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
-  <link rel="apple-touch-icon" sizes="167x167" href="/icon-167.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/icon-152.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/icon-120.png">
-
-  <meta name="msapplication-config" content="/ieconfig.xml">
-
-  {# TODO: theme color #}
-  <meta name="theme-color" content="#FFF">
 
   <script type="text/javascript">
     !function(){var h=document.documentElement.classList;h.remove('no-js');h.add('js');}();
