@@ -1,4 +1,4 @@
-dateModified: 1589569070
+dateModified: 1589584899
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: $SYSTEM_SENDER_NAME
@@ -115,7 +115,7 @@ fields:
           __assoc__:
             -
               - label
-              - '404 - Not found'
+              - '404 - Not Found'
             -
               - value
               - '404'
