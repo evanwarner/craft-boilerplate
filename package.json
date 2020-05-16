@@ -17,7 +17,7 @@
     "// CLEANING ---------------------------------------------------------": "",
     "clean": "run-p clean:*",
     "clean:config": "del \"${npm_package_config_craft}filerev.json\"",
-    "clean:webroot": "del \"${npm_package_config_webroot}*\" \"!${npm_package_config_webroot}media\" \"!${npm_package_config_webroot}cpresources\" \"!${npm_package_config_webroot}index.php\" --dot",
+    "clean:webroot": "del \"${npm_package_config_webroot}*\" \"!${npm_package_config_webroot}cpresources\" \"!${npm_package_config_webroot}media\" \"!${npm_package_config_webroot}index.php\" --dot",
     "// LINTING ----------------------------------------------------------": "",
     "lint": "run-p lint:*",
     "lint:css": "stylelint \"src/css/**/*.css\"",
