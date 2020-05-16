@@ -1,0 +1,45 @@
+{#
+  The _error template will, by default, handle any HTTP error and present its
+  status code and error text. To customize a particular error, create an entry
+  in the Error Pages section with the appropriate HTTP Status selected.
+
+  The Error Pages section, by default, has an Entry URI Format set to an entry's
+  chosen HTTP Status. This enforces that there may only be one entry per status
+  code, as Craft will not allow you to save an entry with a URL collision. This
+  also allows direct testing of an error page by accessing
+
+      http(s)://<hostname>/<httpStatus>
+
+  In a production environment, direct access to the error pages is disabled and
+  will throw a 404 error.
+#}
+
+{% set isDirectAccess = entry is defined %}
+
+{% if isDirectAccess and getenv('ENVIRONMENT') == 'production' %}
+  {# Throw a 404 error if an error entry is directly accessed on production. #}
+  {% exit 404 %}
+{% elseif not isDirectAccess %}
+  {# An actual error occurred. #}
+  {% set status = craft.app.response.statusCode %}
+  {% set entry = craft.entries.section('errorPages').httpStatus(status).one() ?? {
+    type: 'httpError',
+    title: 'Status ' ~ status,
+    errorText: '<p>' ~ craft.app.response.statusText ~ '</p>'
+  } %}
+{% endif %}
+
+{% extends '_layouts/main' %}
+
+
+
+{% block robots %}
+  <meta name="robots" content="noindex, follow">
+{% endblock %}
+
+
+
+{% block content %}
+  <h1>{{ entry.title }}</h1>
+  {{ entry.errorText | raw }}
+{% endblock %}

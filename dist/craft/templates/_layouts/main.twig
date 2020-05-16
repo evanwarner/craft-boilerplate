@@ -11,7 +11,7 @@
   'object-src': '\'none\'',
   'form-action': '\'self\'',
   'frame-ancestors': '\'self\'',
- } | merge(cspDirectives ?? {}) %}
+} | merge(cspDirectives ?? {}) %}
 
 {% set headers = {
   'Content-Security-Policy': cspDirectives,
@@ -31,13 +31,13 @@
 
 
 <!DOCTYPE html>
-<html class="no-js" lang="{{ currentSite.language|slice(0, 2) }}">
+<html class="no-js" lang="{{ currentSite.language | slice(0, 2) }}">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {# TODO: meta titles #}
-  {% if entry is defined and entry.type == 'homepage' %}
+  {% if entry is defined and entry and entry.type == 'homepage' %}
     {% set metaTitle = siteName %}
   {% else %}
     {% set metaTitle = (metaTitle ?? displayTitle ?? entry.title ?? '') ~ ' | ' ~ siteName %}
@@ -48,15 +48,23 @@
   {% set metaDescription = metaDescription ?? '' %}
   <meta name="description" content="{{ metaDescription }}">
 
-  <meta name="referrer" content="unsafe-url">
+  {% block referrer %}
+    <meta name="referrer" content="unsafe-url">
+  {% endblock %}
+  {% block robots %}
+    {% if getenv('ENVIRONMENT') == 'staging' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+  {% endblock %}
   <meta name="format-detection" content="telephone=no">
 
+  {# TODO: social sharing info #}
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ craft.app.request.absoluteUrl }}">
   <meta property="og:site_name" content="{{ siteName }}">
   <meta property="og:title" content="{{ metaTitle }}">
   <meta property="og:description" content="{{ metaDescription }}">
-  <meta property="og:locale" content="{{ currentSite.language|slice(0, 2) }}">
+  <meta property="og:locale" content="{{ currentSite.language | slice(0, 2) }}">
   <meta property="og:image" content="">
 
   <meta name="twitter:card" content="summary">
@@ -64,6 +72,7 @@
   <meta name="twitter:site" content="@">
   <meta name="twitter:creator" content="@">
 
+  {# TODO: favicons #}
   <meta name="apple-mobile-web-app-title" content="{{ siteName }}">
   <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
   <link rel="apple-touch-icon" sizes="167x167" href="/icon-167.png">
@@ -72,24 +81,21 @@
 
   <meta name="msapplication-config" content="/ieconfig.xml">
 
+  {# TODO: theme color #}
   <meta name="theme-color" content="#FFF">
 
   <script type="text/javascript">
-    !function() {
-      var h = document.documentElement.classList;
-      h.remove('no-js');
-      h.add('js');
-    }();
+    !function(){var h=document.documentElement.classList;h.remove('no-js');h.add('js');}();
   </script>
 
   <link rel="stylesheet" href="{{ rev('css/main.css') }}" media="screen">
   {{ head() }}
 </head>
-{% set bodyClasses = bodyClasses|default([]) %}
-{% if entry is defined %}
-  {% set bodyClasses = bodyClasses|merge([entry.type | capitalize ~ 'Page']) %}
+{% set bodyClasses = bodyClasses | default([]) %}
+{% if entry is defined and entry %}
+  {% set bodyClasses = bodyClasses | merge([entry.type | ucfirst ~ 'Page']) %}
 {% endif %}
-<body class="{{ bodyClasses|join(' ') }}">
+<body class="{{ bodyClasses | unique | join(' ') }}">
   {{ beginBody() }}
   <a class="SkipLink u-visuallyHidden u-focusable" href="#main-content" title="Jump to the main page content">Skip to content</a>
 

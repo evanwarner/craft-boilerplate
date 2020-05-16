@@ -17,6 +17,7 @@ return [
     'cpTrigger' => 'manage',
     'defaultWeekStartDay' => 0,
     'enableGql' => false,
+    'errorTemplatePrefix' => '_',
     'maxRevisions' => 10,
     'omitScriptNameInUrls' => true,
     'postCpLoginRedirect' => 'entries',

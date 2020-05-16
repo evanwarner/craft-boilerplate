@@ -52,7 +52,6 @@ The following should be completed immediately after generating a new project. On
 1. Edit the _Project Name_ and _Project Description_ in `README.md`
 1. Set the `name` and `description` in `package.json`
 1. Configure project domains
-    - Set the sitemap URL in `/src/robots.txt`
     - Set the `SITE_URL` in `/dist/[craft]/.env`
 1. Set the `SYSTEM_EMAIL` in `/dist/[craft]/.env`
 1. Set the `SYSTEM_SENDER_NAME` in `/dist/[craft]/.env`
