@@ -7,6 +7,7 @@
 ### Changed
 - Established a better starting point for providing favicon and home screen icons
 - Updated ESLint to v7.x
+- Updated Node packages to their latest versions
 
 ## 1.1.0 - 2020-05-15
 ### Added

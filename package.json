@@ -67,9 +67,9 @@
     "// WATCHING ----------------------------------------------------------": ""
   },
   "devDependencies": {
-    "caniuse-lite": "^1.0.30001046",
+    "caniuse-lite": "^1.0.30001061",
     "cssnano": "^4.1.10",
-    "del-cli": "^3.0.0",
+    "del-cli": "^3.0.1",
     "eslint": "^7.0.0",
     "eslint-plugin-jsdoc": "^25.4.1",
     "hashmark": "^5.0.0",
