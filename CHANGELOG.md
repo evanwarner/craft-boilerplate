@@ -6,6 +6,7 @@
 
 ### Changed
 - Established a better starting point for providing favicon and home screen icons
+- Updated ESLint to v7.x
 
 ## 1.1.0 - 2020-05-15
 ### Added
