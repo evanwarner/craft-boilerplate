@@ -1,5 +1,17 @@
 # Authoring CSS for this Project
 
+CSS for this project uses native CSS syntax, with some future-ready syntax enabled by a few PostCSS plugins. The philosophy being that once a feature becomes supported by a project's supported browsers, the PostCSS processing of the syntax can be disabled, leaving the syntax as-authored. The following future syntax is allowed in the codebase:
+
+- [custom properties](https://preset-env.cssdb.org/features#custom-properties)
+- [custom media queries](https://preset-env.cssdb.org/features#custom-media-queries)
+- [custom selectors](https://preset-env.cssdb.org/features#custom-selectors)
+- the `:matches()` [pseudo-class](https://preset-env.cssdb.org/features#matches-pseudo-class)
+- multiple selectors within the `:not()` [pseudo-class](https://preset-env.cssdb.org/features#not-pseudo-class)
+- [case-insensitive attribute selector matching](https://preset-env.cssdb.org/features#case-insensitive-attributes)
+- [nesting rules](https://preset-env.cssdb.org/features#nesting-rules)
+
+CSS is broken up into separate logical files for ease of authoring, and [PostCSS Import](https://github.com/postcss/postcss-import) is used to concatenate files together into the production-ready stylesheet. Necessary vendor prefixes for supported browsers are automatically applied via Autoprefixer during the build process.
+
 
 
 ## Class Naming
@@ -31,6 +43,7 @@ RegEx pattern for qualifying semantic class names:
 
 
 ### Variant classes
+
 Variants are instances of an object that have a visual difference from the base version. They are indicated by adding one or more variant classes after the primary semantic class for the object. A variant class should be camelCase and prefixed by one hyphen (e.g. `class="Alert -critical"`).
 
 Variant classes should _never_ be used on their own in a selector, they should always be chained to a primary object class. If you find yourself wanting to use a variant class on its own, it's likely better to use a utility class.

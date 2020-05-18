@@ -1,6 +1,7 @@
 {
   "parserOptions": {
-    "ecmaVersion": 5
+    "ecmaVersion": 5,
+    "sourceType": "script"
   },
   "env": {
     "browser": true
@@ -8,55 +9,66 @@
   "globals": {
 
   },
-  "rules": {
-    "no-dupe-args": "error",
-    "no-dupe-keys": "error",
-    "no-duplicate-case": "error",
-    "no-empty-character-class": "warn",
-    "no-empty": "warn",
-    "no-extra-semi": "warn",
-    "no-invalid-regexp": "error",
-    "no-irregular-whitespace": "error",
-    "no-regex-spaces": "warn",
-    "no-sparse-arrays": "warn",
-    "no-unreachable": "warn",
-    "use-isnan": "error",
-    "valid-jsdoc": ["warn", {
-      "prefer": {
-        "arg": "param",
-        "argument": "param",
+  "plugins": [
+    "jsdoc"
+  ],
+  "settings": {
+    "jsdoc": {
+      "tagNamePreference": {
         "class": "constructor",
-        "return": "returns"
-      }}],
-
-    "array-callback-return": "warn",
+        "member": "var",
+        "returns": "return"
+      }
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:jsdoc/recommended"
+  ],
+  "rules": {
+    // ES6-only rules
+    //"no-template-curly-in-string": "error",
+    //"prefer-exponentiation-operator": "warn",
+    //"no-var": "error",
+    //"prefer-rest-params": "error",
+    //"prefer-spread": "warn",
+    //"prefer-template": "warn",
+    // Functional rules
+    "array-callback-return": "error",
+    "consistent-return": "warn",
     "curly": "error",
+    "default-case-last": "warn",
+    "dot-location": ["warn", "property"],
     "dot-notation": "warn",
     "eqeqeq": "error",
     "guard-for-in": "warn",
     "no-caller": "error",
+    "no-constructor-return": "warn",
     "no-eval": "error",
-    "no-fallthrough": "warn",
-    "no-implied-eval": "warn",
+    "no-extend-native": "warn",
+    "no-implicit-coercion": "warn",
+    "no-implicit-globals": "warn",
+    "no-implied-eval": "error",
+    "no-loop-func": "warn",
     "no-multi-spaces": "warn",
+    "no-new": "warn",
     "no-new-wrappers": "warn",
-    "no-redeclare": "error",
+    "no-return-assign": "warn",
     "no-useless-concat": "warn",
-    "no-useless-escape": "warn",
     "no-useless-return": "warn",
     "no-void": "error",
-    "no-with": "error",
     "radix": "warn",
+    "yoda": ["warn", "never", {
+      "exceptRange": true
+    }],
     "strict": "error",
-
-    "no-delete-var": "error",
-    "no-undef": "error",
-    "no-unused-vars": "warn",
     "no-use-before-define": ["warn", "nofunc"],
-
+    // Stylistic rules
     "array-bracket-spacing": "warn",
     "block-spacing": "warn",
-    "brace-style": ["warn", "1tbs", {"allowSingleLine": true}],
+    "brace-style": ["warn", "1tbs", {
+      "allowSingleLine": true
+    }],
     "camelcase": "warn",
     "comma-dangle": ["warn", "always-multiline"],
     "comma-spacing": "warn",
@@ -64,30 +76,48 @@
     "computed-property-spacing": "warn",
     "eol-last": "error",
     "func-call-spacing": "warn",
-    "indent": ["warn", 2, {"SwitchCase": 1}],
+    "indent": ["warn", 2, {
+      "SwitchCase": 1
+    }],
     "key-spacing": "warn",
     "keyword-spacing": "warn",
     "linebreak-style": "error",
+    "lines-between-class-members": "warn",
     "new-cap": "warn",
     "new-parens": "warn",
+    "newline-per-chained-call": ["warn", {
+      "ignoreChainWithDepth": 2
+    }],
     "no-array-constructor": "warn",
     "no-lonely-if": "warn",
-    "no-mixed-spaces-and-tabs": "warn",
     "no-new-object": "warn",
     "no-trailing-spaces": "warn",
     "no-whitespace-before-property": "warn",
     "object-curly-spacing": "warn",
     "object-property-newline": "warn",
+    "one-var": ["error", "never"],
+    "operator-linebreak": ["warn", "before"],
+    "quote-props": ["warn", "as-needed", {
+      "unnecessary": true,
+      "numbers": true
+    }],
     "quotes": ["warn", "single"],
-    "semi-spacing": "warn",
     "semi": "error",
+    "semi-spacing": "warn",
     "space-before-blocks": "warn",
     "space-before-function-paren": ["warn", "never"],
     "space-in-parens": "warn",
     "space-infix-ops": "warn",
     "space-unary-ops": "warn",
-
-    "no-class-assign": "error",
-    "no-const-assign": "error"
+    "spaced-comment": ["warn", "always"],
+    "switch-colon-spacing": "warn",
+    "template-tag-spacing": "warn",
+    // ES6 stylistic rules (safe for ES5)
+    "arrow-body-style": ["warn", "always"],
+    "arrow-parens": "warn",
+    "arrow-spacing": "warn",
+    "no-duplicate-imports": "warn",
+    "rest-spread-spacing": "warn",
+    "template-curly-spacing": "warn"
   }
 }

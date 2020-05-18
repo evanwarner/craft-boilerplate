@@ -1,7 +1,19 @@
 # Changelog
 
-## [Unreleased]
-No unreleased changes.
+## Unreleased
+_No unreleased changes._
+
+
+## 1.2.0 - 2020-05-17
+### Added
+- There is now a `manifest.json` file to configure
+- Documented the use of PostCSS + plugins in the CSS authoring guide
+
+### Changed
+- Established a better starting point for providing favicon and home screen icons
+- Updated ESLint and its configuration to v7.x
+- Updated Node packages to their latest versions
+
 
 ## 1.1.0 - 2020-05-15
 ### Added
@@ -20,17 +32,21 @@ No unreleased changes.
 - Prevent the output of duplicate body classes
 - Fixed a potential `null` entry error
 
+
 ## 1.0.3 - 2020-05-13
 ### Changed
 - Switched to Unlicense
+
 
 ## 1.0.2 - 2020-05-13
 ### Added
 - Added an MIT license
 
+
 ## 1.0.1 - 2020-05-12
 ### Fixed
 - Removed a failing post-create-project script
+
 
 ## 1.0.0 - 2020-05-12
 ### Added

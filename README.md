@@ -53,6 +53,7 @@ The following should be completed immediately after generating a new project. On
 1. Set the `name` and `description` in `package.json`
 1. Configure project domains
     - Set the `SITE_URL` in `/dist/[craft]/.env`
+    - Set the `start_url` in `/src/manifest.json`
 1. Set the `SYSTEM_EMAIL` in `/dist/[craft]/.env`
 1. Set the `SYSTEM_SENDER_NAME` in `/dist/[craft]/.env`
 1. Set the `SYSTEM_REPLY_TO_EMAIL` in `/dist/[craft]/.env`
