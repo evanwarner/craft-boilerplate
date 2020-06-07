@@ -63,8 +63,7 @@
     "bump:preminor": "npm --no-git-tag-version version preminor",
     "bump:premajor": "npm --no-git-tag-version version premajor",
     "postversion": "git add package*.json && git commit -m \"🎉 Prepare v${npm_package_version}\" && git push all develop",
-    "mergeversion": "git checkout master && git merge --no-ff -m \"Merge branch 'develop'\" develop && git tag -a v${npm_package_version} -m \"\" && git push all master && git push all v${npm_package_version} && git checkout develop",
-    "// WATCHING ----------------------------------------------------------": ""
+    "mergeversion": "git checkout master && git merge --no-ff -m \"Merge branch 'develop'\" develop && git tag -a v${npm_package_version} -m \"\" && git push all master && git push all v${npm_package_version} && git checkout develop"
   },
   "devDependencies": {
     "caniuse-lite": "^1.0.30001061",
