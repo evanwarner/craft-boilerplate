@@ -9,41 +9,40 @@
  */
 
 return [
-  // Global settings
-  '*' => [
-    'allowAdminChanges' => false,
-    'allowUpdates' => false,
-    'cacheDuration' => 'P30D',
-    'cpTrigger' => 'manage',
-    'defaultWeekStartDay' => 0,
-    'enableGql' => false,
-    'errorTemplatePrefix' => '_',
-    'maxRevisions' => 10,
-    'omitScriptNameInUrls' => true,
-    'postCpLoginRedirect' => 'entries',
-    'securityKey' => getenv('SECURITY_KEY'),
-    'sendPoweredByHeader' => false,
-    'siteUrl' => getenv('SITE_URL'),
-    'useProjectConfigFile' => true
-  ],
+    '*' => [
+        'allowAdminChanges' => false,
+        'allowUpdates' => false,
+        'cacheDuration' => 'P30D',
+        'cpTrigger' => 'manage',
+        'defaultWeekStartDay' => 0,
+        'enableGql' => false,
+        'errorTemplatePrefix' => '_',
+        'maxRevisions' => 10,
+        'omitScriptNameInUrls' => true,
+        'postCpLoginRedirect' => 'entries',
+        'securityKey' => getenv('SECURITY_KEY'),
+        'sendPoweredByHeader' => false,
+        'upscaleImages' => false,
+        'useEmailAsUsername' => true,
+        'useProjectConfigFile' => true,
+    ],
 
-  'dev' => [
-    'allowAdminChanges' => true,
-    'allowUpdates' => true,
-    'devMode' => true,
-    'elevatedSessionDuration' => 'PT1H',
-    'maxInvalidLogins' => 1000,
-    'testToEmailAddress' => getenv('TEST_EMAIL'),
-    'userSessionDuration' => 'P1W'
-  ],
+    'dev' => [
+        'allowAdminChanges' => true,
+        'allowUpdates' => true,
+        'devMode' => true,
+        'elevatedSessionDuration' => 'PT1H',
+        'maxInvalidLogins' => 1000,
+        'testToEmailAddress' => getenv('TEST_EMAIL'),
+        'userSessionDuration' => 'P7D',
+    ],
 
-  'staging' => [
+    'staging' => [
 
-  ],
+    ],
 
-  'production' => [
-    'cacheDuration' => 'P5D',
-    'verificationCodeDuration' => 'P7D',
-    'userSessionDuration' => 'PT1H'
-  ],
+    'production' => [
+        'verificationCodeDuration' => 'P7D',
+        'userSessionDuration' => 'PT1H',
+    ],
 ];

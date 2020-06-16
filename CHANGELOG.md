@@ -4,6 +4,13 @@
 _No unreleased changes._
 
 
+## 1.2.1 - 2020-06-16
+### Changed
+- PHP editorconfig set to use 4 spaces instead of 2, for PSR-12 compliance
+- DB configuration reverted to using individual ENV variables (see [Craft issue #6159](https://github.com/craftcms/cms/issues/6159))
+- Robots `noindex` set for _any_ non-production environment instead of just staging
+
+
 ## 1.2.0 - 2020-05-17
 ### Added
 - There is now a `manifest.json` file to configure

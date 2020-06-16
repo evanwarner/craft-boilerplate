@@ -52,7 +52,7 @@
     <meta name="referrer" content="unsafe-url">
   {% endblock %}
   {% block robots %}
-    {% if getenv('ENVIRONMENT') == 'staging' %}
+    {% if getenv('ENVIRONMENT') != 'production' %}
       <meta name="robots" content="noindex, nofollow">
     {% endif %}
   {% endblock %}

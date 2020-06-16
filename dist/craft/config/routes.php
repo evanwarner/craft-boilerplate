@@ -19,5 +19,5 @@
  */
 
 return [
-  'robots.txt' => ['template' => '_robots'],
+    'robots.txt' => ['template' => '_robots'],
 ];
