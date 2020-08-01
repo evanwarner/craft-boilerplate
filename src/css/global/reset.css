@@ -172,7 +172,7 @@ abbr[title] {
 }
 
 pre {
-  overflow: scroll;
+  overflow: auto;
   font-family: inherit;
 }
 
