@@ -8,6 +8,7 @@
       "cp ./dist/craft/example.env ./dist/craft/.env",
       "cp ./dbbackup-example.sh ./dbbackup.sh",
       "rm composer.json",
+      "rm -rf vendor",
       "rm CHANGELOG.md",
       "rm LICENSE.md",
       "mv README.md SETUP.md",
