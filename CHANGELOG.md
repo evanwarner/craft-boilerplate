@@ -1,7 +1,8 @@
 # Changelog
 
 ## Unreleased
-_No unreleased changes._
+### Changed
+- Global template variables now live in a top level layout file that all pages will extend
 
 
 ## 1.3.0 - 2020-08-01
