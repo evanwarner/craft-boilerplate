@@ -18,11 +18,15 @@
     <meta name="robots" content="{{ metaRobots }}">
   {% endif %}
 
+  {% if canonicalUrl is defined and canonicalUrl %}
+    <link rel="canonical" href="{{ canonicalUrl }}">
+  {% endif %}
+
   <meta name="format-detection" content="telephone=no">
 
   {# TODO: social sharing info #}
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ craft.app.request.absoluteUrl }}">
+  <meta property="og:url" content="{{ canonicalUrl ?? craft.app.request.absoluteUrl }}">
   <meta property="og:site_name" content="{{ siteName }}">
   <meta property="og:title" content="{{ metaTitle }}">
   <meta property="og:description" content="{{ metaDescription }}">

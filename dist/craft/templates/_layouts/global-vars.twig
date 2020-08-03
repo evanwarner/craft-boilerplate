@@ -56,6 +56,15 @@
 
 
 
+{% if (canonicalUrl is not defined) and (entry is defined) %}
+  {% set canonicalUrl = entry.url ?? null %}
+{% endif %}
+{% if canonicalUrl is defined and canonicalUrl %}
+  {% set canonicalUrl = canonicalUrl | trim('/', 'right') %}
+{% endif %}
+
+
+
 {% set bodyClasses = bodyClasses | default([]) %}
 {% if entry is defined and entry %}
   {% set bodyClasses = bodyClasses | merge([entry.type | ucfirst ~ 'Page']) %}

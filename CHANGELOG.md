@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Added
+- There is now a default canonical URL implementation that can be extended
+
 ### Changed
 - Global template variables now live in a top level layout file that all pages will extend
 
