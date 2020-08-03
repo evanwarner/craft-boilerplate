@@ -3,68 +3,68 @@
 
 
 {% block html %}
-<!DOCTYPE html>
-<html class="no-js" lang="{{ currentLanguage }}">
-<head prefix="og: http://ogp.me/ns#">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!DOCTYPE html>
+  <html class="no-js" lang="{{ currentLanguage }}">
+    <head prefix="og: http://ogp.me/ns#">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ metaTitle }}</title>
-  <meta name="description" content="{{ metaDescription }}">
+      <title>{{ metaTitle }}</title>
+      <meta name="description" content="{{ metaDescription }}">
 
-  <meta name="referrer" content="{{ metaReferrer }}">
+      <meta name="referrer" content="{{ metaReferrer }}">
 
-  {% if metaRobots %}
-    <meta name="robots" content="{{ metaRobots }}">
-  {% endif %}
+      {% if metaRobots %}
+        <meta name="robots" content="{{ metaRobots }}">
+      {% endif %}
 
-  {% if canonicalUrl is defined and canonicalUrl %}
-    <link rel="canonical" href="{{ canonicalUrl }}">
-  {% endif %}
+      {% if canonicalUrl is defined and canonicalUrl %}
+        <link rel="canonical" href="{{ canonicalUrl }}">
+      {% endif %}
 
-  <meta name="format-detection" content="telephone=no">
+      <meta name="format-detection" content="telephone=no">
 
-  {# TODO: social sharing info #}
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ canonicalUrl ?? craft.app.request.absoluteUrl }}">
-  <meta property="og:site_name" content="{{ siteName }}">
-  <meta property="og:title" content="{{ metaTitle }}">
-  <meta property="og:description" content="{{ metaDescription }}">
-  <meta property="og:locale" content="{{ currentLanguage }}">
-  <meta property="og:image" content="">
+      {# TODO: social sharing info #}
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="{{ canonicalUrl ?? craft.app.request.absoluteUrl }}">
+      <meta property="og:site_name" content="{{ siteName }}">
+      <meta property="og:title" content="{{ metaTitle }}">
+      <meta property="og:description" content="{{ metaDescription }}">
+      <meta property="og:locale" content="{{ currentLanguage }}">
+      <meta property="og:image" content="">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="">
-  <meta name="twitter:site" content="@">
-  <meta name="twitter:creator" content="@">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:image" content="">
+      <meta name="twitter:site" content="@">
+      <meta name="twitter:creator" content="@">
 
-  {# TODO: generate a 32x32 favicon.ico in webroot #}
-  {# TODO: generate SVG favicon #}<link rel="icon" href="/favicon.svg">
-  {# TODO: generate SVG pinned tab icon (and color) #}<link rel="mask-icon" href="/mask-icon.svg" color="#FFF">
-  {# TODO: generate Web Clip icon #}<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
-  {# TODO: generate Windows Tile icons (and tile color) #}<meta name="msapplication-config" content="/ieconfig.xml">
-  {# TODO: generate Android home screen icons (and theme colors) #}<link rel="manifest" href="/manifest.json">
-  <meta name="apple-mobile-web-app-title" content="{{ siteName }}">
+      {# TODO: generate a 32x32 favicon.ico in webroot #}
+      {# TODO: generate SVG favicon #}<link rel="icon" href="/favicon.svg">
+      {# TODO: generate SVG pinned tab icon (and color) #}<link rel="mask-icon" href="/mask-icon.svg" color="#FFF">
+      {# TODO: generate Web Clip icon #}<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+      {# TODO: generate Windows Tile icons (and tile color) #}<meta name="msapplication-config" content="/ieconfig.xml">
+      {# TODO: generate Android home screen icons (and theme colors) #}<link rel="manifest" href="/manifest.json">
+      <meta name="apple-mobile-web-app-title" content="{{ siteName }}">
 
-  <script type="text/javascript">
-    !function(){var h=document.documentElement.classList;h.remove('no-js');h.add('js');}();
-  </script>
+      <script type="text/javascript">
+        !function(){var h=document.documentElement.classList;h.remove('no-js');h.add('js');}();
+      </script>
 
-  <script defer src="{{ rev('js/main.js') }}"></script>
-  <link rel="stylesheet" href="{{ rev('css/main.css') }}" media="screen">
-  {{ head() }}
-</head>
+      <script defer src="{{ rev('js/main.js') }}"></script>
+      <link rel="stylesheet" href="{{ rev('css/main.css') }}" media="screen">
+      {{ head() }}
+    </head>
 
-<body class="{{ bodyClasses | unique | join(' ') }}">
-  {{ beginBody() }}
-  <a class="SkipLink u-visuallyHidden u-focusable" href="#main-content" title="Jump to the main page content">Skip to content</a>
+    <body class="{{ bodyClasses | unique | join(' ') }}">
+      {{ beginBody() }}
+      <a class="SkipLink u-visuallyHidden u-focusable" href="#main-content" title="Jump to the main page content">Skip to content</a>
 
-  <main id="main-content">
-    {% block content %}{% endblock %}
-  </main>
+      <main id="main-content">
+        {% block content %}{% endblock %}
+      </main>
 
-  {{ endBody() }}
-  <link rel="stylesheet" href="{{ rev('css/print.css') }}" media="print">
-</body>
-</html>
+      {{ endBody() }}
+      <link rel="stylesheet" href="{{ rev('css/print.css') }}" media="print">
+    </body>
+  </html>
 {% endblock %}
