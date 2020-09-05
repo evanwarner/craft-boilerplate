@@ -7,6 +7,7 @@
     "post-create-project-cmd": [
       "cp ./dist/craft/example.env ./dist/craft/.env",
       "cp ./dbbackup-example.sh ./dbbackup.sh",
+      "mkdir database-backups",
       "rm composer.json",
       "rm -rf vendor",
       "rm CHANGELOG.md",

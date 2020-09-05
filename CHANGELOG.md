@@ -4,17 +4,36 @@
 _No unreleased changes._
 
 
+## 2.0.0 - 2020-09-05
+### Added
+- Added a default canonical URL implementation that can be extended
+- Added a global template variable to control rendering of social sharing metadata
+- Registered a default site module that defines a site-specific log file ([#6](https://github.com/evanwarner/craft-boilerplate/issues/6))
+
+### Changed
+- Global template variables now live in a top level layout file that all pages will extend
+
+### Updated
+- Craft to v3.5.8
+- Redactor to v2.7.4
+
+### Fixed
+- The meta robots setting is now correctly forced to `noindex, nofollow` on non-production environments
+- Pages with no meta description won't throw an unknown variable error
+- The database backup folder is now generated on project creation ([#4](https://github.com/evanwarner/craft-boilerplate/issues/4))
+
+
 ## 1.3.0 - 2020-08-01
 ### Added
-- The useless root `vendor` folder generated during project creation is now immediately deleted
+- The useless root `vendor` folder generated during project creation is now immediately deleted ([#3](https://github.com/evanwarner/craft-boilerplate/issues/3))
 
 ### Changed
 - The `main.js` file is now loaded in the HTML `<head>` with a `defer` attribute
 - `<pre>` elements are now set to `overflow: auto` by default
 
 ### Updated
-- Updated Craft to v3.4.30
-- Updated Node packages to their latest versions
+- Craft to v3.4.30
+- Node packages to their latest versions
 
 
 ## 1.2.1 - 2020-06-16
@@ -33,22 +52,22 @@ _No unreleased changes._
 - Established a better starting point for providing favicon and home screen icons
 
 ### Updated
-- Updated ESLint and its configuration to v7.x
-- Updated Node packages to their latest versions
+- ESLint and its configuration to v7.x
+- Node packages to their latest versions
 
 
 ## 1.1.0 - 2020-05-15
 ### Added
 - The default referrer meta tag is now wrapped in a Twig block
 - Added a robots Twig block with a default meta tag
-- There is now a site template that handles _all_ HTTP errors. Specific error codes can be customized by adding an Error Page entry for that error.
+- There is now a site template that handles _all_ HTTP errors. Specific error codes can be customized by adding an Error Page entry for that error. ([#1](https://github.com/evanwarner/craft-boilerplate/issues/1), [#2](https://github.com/evanwarner/craft-boilerplate/issues/2))
 - Added a few TODO comments where things should be tailored to each generated project
 
 ### Changed
 - The `robots.txt` file is now generated through a custom route and a template
 
 ### Updated
-- Updated Craft to v3.4.19.1
+- Craft to v3.4.19.1
 
 ### Fixed
 - Prevent build script from cleaning the media folder

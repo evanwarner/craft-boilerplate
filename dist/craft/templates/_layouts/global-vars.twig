@@ -1,0 +1,92 @@
+{#
+  Default response headers. Any individual hash key can be overridden in a
+  child template.
+
+  TODO: set directives appropriate for the project
+#}
+{% set cspDirectives = {
+  'default-src': '\'self\'',
+  'script-src': '\'self\' \'unsafe-inline\'',
+  'style-src': '\'self\' \'unsafe-inline\'',
+  'object-src': '\'none\'',
+  'form-action': '\'self\'',
+  'frame-ancestors': '\'self\'',
+} | merge(cspDirectives ?? {}) %}
+
+{% set headers = {
+  'Content-Security-Policy': cspDirectives,
+} | merge(headers ?? {}) %}
+
+{% for headerName, value in headers %}
+  {% if value is iterable %}
+    {% set directives = [] %}
+    {% for directive, directiveValue in value %}
+      {% set directives = directives | merge([directive ~ ' ' ~ directiveValue]) %}
+    {% endfor %}
+    {% set value = directives | join('; ') %}
+  {% endif %}
+  {% header headerName ~ ': ' ~ value %}
+{% endfor %}
+
+
+
+{% set currentLanguage = currentSite.language | slice(0, 2) %}
+
+
+
+{# TODO: meta titles #}
+{% if entry is defined and entry and entry.type == 'home' %}
+  {% set metaTitle = metaTitle ?? siteName %}
+{% else %}
+  {% set metaTitle = (metaTitle ?? displayTitle ?? entry.title ?? '') ~ ' | ' ~ siteName %}
+{% endif %}
+
+
+
+{# TODO: meta descriptions #}
+{% set metaDescription = metaDescription ?? '' %}
+
+
+
+{% set metaReferrer = metaReferrer | default('unsafe-url') %}
+
+
+
+{#
+  On non-production environments, all pages will have a `noindex, nofollow` meta
+  robots tag in place. This will supercede any values set in child templates.
+
+  On production, this default is skipped and only values set in child templates
+  will produce a meta robots tag.
+#}
+{% set metaRobots = getenv('ENVIRONMENT') != 'production' ? 'noindex, nofollow' : metaRobots ?? null %}
+
+
+
+{#
+  By default, a canonical URL tag will be output for all entries. Setting the
+  `canonicalUrl` variable to anything else in a child template will override
+  this behavior, allowing URLs for custom routes or overriding/removing the
+  canonical URL from an entry's page.
+#}
+{% if (canonicalUrl is not defined) and (entry is defined) %}
+  {% set canonicalUrl = entry.url ?? null %}
+{% endif %}
+{% if canonicalUrl is defined and canonicalUrl %}
+  {% set canonicalUrl = canonicalUrl | trim('/', 'right') %}
+{% endif %}
+
+
+
+{% set enableSocialSharingMeta = enableSocialSharingMeta ?? true %}
+
+
+
+{% set bodyClasses = bodyClasses | default([]) %}
+{% if entry is defined and entry %}
+  {% set bodyClasses = bodyClasses | merge([entry.type | ucfirst ~ 'Page']) %}
+{% endif %}
+
+
+
+{% block html %}{% endblock %}

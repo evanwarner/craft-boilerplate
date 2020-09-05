@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: a7145a7e-c7c8-49cd-8ce8-22971c1b87ba
+handle: caption
+instructions: 'A caption that may display next to the image.'
+name: Caption
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Basic.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field
