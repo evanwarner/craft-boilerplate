@@ -19,7 +19,7 @@
 
 return [
     'modules' => [
-        'my-module' => \modules\Module::class,
+        'site-module' => \modules\sitemodule\SiteModule::class,
     ],
-    //'bootstrap' => ['my-module'],
+    'bootstrap' => ['site-module'],
 ];
