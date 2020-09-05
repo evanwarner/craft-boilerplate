@@ -1,0 +1,34 @@
+dateModified: 1599345057
+email:
+  fromEmail: $SYSTEM_EMAIL
+  fromName: $SYSTEM_SENDER_NAME
+  replyToEmail: $SYSTEM_REPLY_TO_EMAIL
+  template: ''
+  transportSettings:
+    command: ''
+  transportType: craft\mail\transportadapters\Sendmail
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: pro
+  live: true
+  name: $SYSTEM_NAME
+  schemaVersion: 3.5.13
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: ''
+  photoSubpath: users
+  photoVolumeUid: 0d54b9db-2580-4605-b365-aba8423ae0e3
+  requireEmailVerification: true
