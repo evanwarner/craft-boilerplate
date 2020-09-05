@@ -62,6 +62,13 @@
 {% set metaRobots = getenv('ENVIRONMENT') != 'production' ? 'noindex, nofollow' : metaRobots ?? null %}
 
 
+
+{#
+  By default, a canonical URL tag will be output for all entries. Setting the
+  `canonicalUrl` variable to anything else in a child template will override
+  this behavior, allowing URLs for custom routes or overriding/removing the
+  canonical URL from an entry's page.
+#}
 {% if (canonicalUrl is not defined) and (entry is defined) %}
   {% set canonicalUrl = entry.url ?? null %}
 {% endif %}
