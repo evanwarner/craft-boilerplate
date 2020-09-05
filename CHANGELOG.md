@@ -1,11 +1,26 @@
 # Changelog
 
 ## Unreleased
+_No unreleased changes._
+
+
+## 2.0.0 - 2020-09-05
 ### Added
-- There is now a default canonical URL implementation that can be extended
+- Added a default canonical URL implementation that can be extended
+- Added a global template variable to control rendering of social sharing metadata
+- Registered a default site module that defines a site-specific log file ([#6](https://github.com/evanwarner/craft-boilerplate/issues/6))
 
 ### Changed
 - Global template variables now live in a top level layout file that all pages will extend
+
+### Updated
+- Craft to v3.5.8
+- Redactor to v2.7.4
+
+### Fixed
+- The meta robots setting is now correctly forced to `noindex, nofollow` on non-production environments
+- Pages with no meta description won't throw an unknown variable error
+- The database backup folder is now generated on project creation ([#4](https://github.com/evanwarner/craft-boilerplate/issues/4))
 
 
 ## 1.3.0 - 2020-08-01
