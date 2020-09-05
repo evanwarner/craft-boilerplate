@@ -52,8 +52,14 @@
 
 
 
-{% set metaRobots = metaRobots ?? (getenv('ENVIRONMENT') != 'production' ? 'noindex, nofollow' : null) %}
+{#
+  On non-production environments, all pages will have a `noindex, nofollow` meta
+  robots tag in place. This will supercede any values set in child templates.
 
+  On production, this default is skipped and only values set in child templates
+  will produce a meta robots tag.
+#}
+{% set metaRobots = getenv('ENVIRONMENT') != 'production' ? 'noindex, nofollow' : metaRobots ?? null %}
 
 
 {% if (canonicalUrl is not defined) and (entry is defined) %}
