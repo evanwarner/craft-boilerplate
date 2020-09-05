@@ -17,8 +17,8 @@
 - `<pre>` elements are now set to `overflow: auto` by default
 
 ### Updated
-- Updated Craft to v3.4.30
-- Updated Node packages to their latest versions
+- Craft to v3.4.30
+- Node packages to their latest versions
 
 
 ## 1.2.1 - 2020-06-16
@@ -37,8 +37,8 @@
 - Established a better starting point for providing favicon and home screen icons
 
 ### Updated
-- Updated ESLint and its configuration to v7.x
-- Updated Node packages to their latest versions
+- ESLint and its configuration to v7.x
+- Node packages to their latest versions
 
 
 ## 1.1.0 - 2020-05-15
@@ -52,7 +52,7 @@
 - The `robots.txt` file is now generated through a custom route and a template
 
 ### Updated
-- Updated Craft to v3.4.19.1
+- Craft to v3.4.19.1
 
 ### Fixed
 - Prevent build script from cleaning the media folder
