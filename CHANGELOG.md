@@ -10,7 +10,7 @@
 
 ## 1.3.0 - 2020-08-01
 ### Added
-- The useless root `vendor` folder generated during project creation is now immediately deleted
+- The useless root `vendor` folder generated during project creation is now immediately deleted ([#3](https://github.com/evanwarner/craft-boilerplate/issues/3))
 
 ### Changed
 - The `main.js` file is now loaded in the HTML `<head>` with a `defer` attribute
@@ -45,7 +45,7 @@
 ### Added
 - The default referrer meta tag is now wrapped in a Twig block
 - Added a robots Twig block with a default meta tag
-- There is now a site template that handles _all_ HTTP errors. Specific error codes can be customized by adding an Error Page entry for that error.
+- There is now a site template that handles _all_ HTTP errors. Specific error codes can be customized by adding an Error Page entry for that error. ([#1](https://github.com/evanwarner/craft-boilerplate/issues/1), [#2](https://github.com/evanwarner/craft-boilerplate/issues/2))
 - Added a few TODO comments where things should be tailored to each generated project
 
 ### Changed
