@@ -65,6 +65,10 @@
 
 
 
+{% set enableSocialSharingMeta = enableSocialSharingMeta ?? true %}
+
+
+
 {% set bodyClasses = bodyClasses | default([]) %}
 {% if entry is defined and entry %}
   {% set bodyClasses = bodyClasses | merge([entry.type | ucfirst ~ 'Page']) %}

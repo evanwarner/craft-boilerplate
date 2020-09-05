@@ -24,19 +24,23 @@
 
       <meta name="format-detection" content="telephone=no">
 
-      {# TODO: social sharing info #}
-      <meta property="og:type" content="website">
-      <meta property="og:url" content="{{ canonicalUrl ?? craft.app.request.absoluteUrl }}">
-      <meta property="og:site_name" content="{{ siteName }}">
-      <meta property="og:title" content="{{ metaTitle }}">
-      <meta property="og:description" content="{{ metaDescription }}">
-      <meta property="og:locale" content="{{ currentLanguage }}">
-      <meta property="og:image" content="">
+      {% if enableSocialSharingMeta %}
+        {# TODO: social sharing info #}
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ canonicalUrl ?? craft.app.request.absoluteUrl }}">
+        <meta property="og:site_name" content="{{ siteName }}">
+        <meta property="og:title" content="{{ metaTitle }}">
+        {% if metaDescription %}
+          <meta property="og:description" content="{{ metaDescription }}">
+        {% endif %}
+        <meta property="og:locale" content="{{ currentLanguage }}">
+        <meta property="og:image" content="">
 
-      <meta name="twitter:card" content="summary">
-      <meta name="twitter:image" content="">
-      <meta name="twitter:site" content="@">
-      <meta name="twitter:creator" content="@">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:image" content="">
+        <meta name="twitter:site" content="@">
+        <meta name="twitter:creator" content="@">
+      {% endif %}
 
       {# TODO: generate a 32x32 favicon.ico in webroot #}
       {# TODO: generate SVG favicon #}<link rel="icon" href="/favicon.svg">
