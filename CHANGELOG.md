@@ -7,6 +7,7 @@
 - Updated the format of the humans.txt file.
 
 ### Updated
+- Craft to v3.5.12
 - caniuse-lite to v1.0.30001142
 - eslint to v7.10.0
 - eslint-plugin-jsdoc to v30.6.2
