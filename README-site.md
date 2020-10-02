@@ -62,18 +62,6 @@ TODO: update this
 ---
 
 
-## Git `all` Remote
-The versioning scripts documented below utilize a Git remote named `all`, which is a remote specially configured to push to all your remotes. It is also generally useful to regularly push work to all remotes. To set this remote up:
-
-1. `$ git remote add all [any one of your remote repo URLs]`
-1. For each remote you want to push to: `$ git remote set-url --add --push all [remote repo URL]`
-
-The `all` remote should _never_ be used for a `fetch` or `pull`.
-
-
----
-
-
 ## NPM Scripts
 The project's build system utilizes NPM scripts. The following scripts are intended for regular use. Scripts not documented here are primarily subscripts triggered by these.
 
@@ -91,9 +79,9 @@ These scripts are used to generate builds of the project for different environme
 ### Versioning Scripts
 These scripts are used when a build of the project is ready for release.
 
-`$ npm run bump`, `$ npm run bump:minor`, and `$ npm run bump:major` should _only_ be run while on the `develop` branch. They will bump the project's version number (at a patch, minor, or major level, respectively), commit the `package*.json` files, and push the commit to all remotes.
+`$ npm run bump`, `$ npm run bump:minor`, and `$ npm run bump:major` should _only_ be run while on the `develop` branch. They will bump the project's version number (at a patch, minor, or major level, respectively), commit the `package*.json` files, and push the commit.
 
-`$ npm run mergeversion` should usually be run immediately after one of the `bump` scripts. It will merge the `develop` branch into `master`, tag a new version, then push the new tag and `master` branch to all remotes. Lastly it will re-checkout `develop` to ensure subsequent work isn't accidentally done on `master`.
+`$ npm run mergeversion` should usually be run immediately after one of the `bump` scripts. It will merge the `develop` branch into `master`, tag a new version, then push the new tag and `master` branch. Lastly it will re-checkout `develop` to ensure subsequent work isn't accidentally done on `master`.
 
 
 ---

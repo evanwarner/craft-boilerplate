@@ -1,7 +1,17 @@
 # Changelog
 
 ## Unreleased
-_No unreleased changes._
+### Changed
+- The commit tasks no longer utilize an `all` git remote, and just sticks with `origin`.
+- Deleted the legacy.css file, as I no longer support any browsers it was meant for.
+- Updated the format of the humans.txt file.
+
+### Updated
+- caniuse-lite to v1.0.30001142
+- eslint to v7.10.0
+- eslint-plugin-jsdoc to v30.6.2
+- stylelint to v13.7.2
+- terser to v5.3.3
 
 
 ## 2.0.0 - 2020-09-05

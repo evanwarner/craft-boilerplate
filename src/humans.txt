@@ -1,14 +1,17 @@
-# TEAM
+TEAM
   Evan Warner - Design and Development
     Website: https://www.evanwarner.com
     Twitter: @evanwarner
-    From: Bend, OR
+    From: Bend, Oregon, USA
 
-# THANKS
 
-# TYPEFACES
 
-# TECHNOLOGY
-  Standards: HTML5, CSS3, ES5
-  Components: [CMS, plugins, front-end libraries and plugins]
-  Software: VS Code, Affinity Designer
+THANKS
+
+
+
+TECHNOLOGY
+  Craft CMS - https://craftcms.com
+    Redactor - https://plugins.craftcms.com/redactor
+    Asset Rev - https://plugins.craftcms.com/assetrev
+  [typefaces, plugins, front-end libraries and plugins]

@@ -62,15 +62,15 @@
     "bump:prepatch": "npm --no-git-tag-version version prepatch",
     "bump:preminor": "npm --no-git-tag-version version preminor",
     "bump:premajor": "npm --no-git-tag-version version premajor",
-    "postversion": "git add package*.json && git commit -m \"🎉 Prepare v${npm_package_version}\" && git push all develop",
-    "mergeversion": "git checkout master && git merge --no-ff -m \"Merge branch 'develop'\" develop && git tag -a v${npm_package_version} -m \"\" && git push all master && git push all v${npm_package_version} && git checkout develop"
+    "postversion": "git add package*.json && git commit -m \"🎉 Prepare v${npm_package_version}\" && git push origin develop",
+    "mergeversion": "git checkout master && git merge --no-ff -m \"Merge branch 'develop'\" develop && git tag -a v${npm_package_version} -m \"\" && git push origin master && git push origin v${npm_package_version} && git checkout develop"
   },
   "devDependencies": {
-    "caniuse-lite": "^1.0.30001109",
+    "caniuse-lite": "^1.0.30001142",
     "cssnano": "^4.1.10",
     "del-cli": "^3.0.1",
-    "eslint": "^7.6.0",
-    "eslint-plugin-jsdoc": "^30.1.0",
+    "eslint": "^7.10.0",
+    "eslint-plugin-jsdoc": "^30.6.2",
     "hashmark": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.0.2",
@@ -80,9 +80,9 @@
     "postcss-preset-env": "^6.7.0",
     "preprocess": "^3.2.0",
     "preprocess-cli-tool": "^1.0.1",
-    "stylelint": "^13.6.1",
+    "stylelint": "^13.7.2",
     "stylelint-order": "^4.1.0",
     "svgo": "^1.2.2",
-    "terser": "^5.0.0"
+    "terser": "^5.3.3"
   }
 }
