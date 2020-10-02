@@ -2,9 +2,10 @@
 
 ## Unreleased
 ### Changed
-- The commit tasks no longer utilize an `all` git remote, and just sticks with `origin`.
-- Deleted the legacy.css file, as I no longer support any browsers it was meant for.
-- Updated the format of the humans.txt file.
+- The commit tasks no longer utilize an `all` git remote, and just utilize `origin`
+- Deleted the legacy.css file, as I no longer support any browsers it was meant for
+- Updated the format of the `humans.txt` file
+- The `humans.txt` file is now generated through a custom route and a template
 
 ### Updated
 - Craft to v3.5.12

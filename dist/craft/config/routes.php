@@ -19,5 +19,6 @@
  */
 
 return [
+    'humans.txt' => ['template' => '_humans'],
     'robots.txt' => ['template' => '_robots'],
 ];
