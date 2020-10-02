@@ -8,6 +8,7 @@
 
 ### Updated
 - Craft to v3.5.12
+- Redactor to v2.8.1
 - caniuse-lite to v1.0.30001142
 - eslint to v7.10.0
 - eslint-plugin-jsdoc to v30.6.2
