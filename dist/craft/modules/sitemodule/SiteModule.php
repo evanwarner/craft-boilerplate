@@ -18,8 +18,7 @@ use yii\base\Module;
  */
 class SiteModule extends Module
 {
-    // Static Properties
-    // =========================================================================
+    // Static Properties =======================================================
 
     /**
      * Static property that is an instance of this module class so that it can
@@ -29,8 +28,7 @@ class SiteModule extends Module
      */
     public static $instance;
 
-    // Public Methods
-    // =========================================================================
+    // Public Methods ==========================================================
 
     /**
      * Initializes the module.
