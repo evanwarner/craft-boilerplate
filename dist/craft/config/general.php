@@ -8,6 +8,8 @@
  * @see craft\config\GeneralConfig
  */
 
+use craft\helpers\App;
+
 return [
     '*' => [
         'allowAdminChanges' => false,
@@ -20,7 +22,7 @@ return [
         'maxRevisions' => 10,
         'omitScriptNameInUrls' => true,
         'postCpLoginRedirect' => 'entries',
-        'securityKey' => getenv('SECURITY_KEY'),
+        'securityKey' => App::env('SECURITY_KEY'),
         'sendPoweredByHeader' => false,
         'upscaleImages' => false,
         'useEmailAsUsername' => true,
@@ -33,7 +35,7 @@ return [
         'devMode' => true,
         'elevatedSessionDuration' => 'PT1H',
         'maxInvalidLogins' => 1000,
-        'testToEmailAddress' => getenv('TEST_EMAIL'),
+        'testToEmailAddress' => App::env('TEST_EMAIL'),
         'userSessionDuration' => 'P7D',
     ],
 
