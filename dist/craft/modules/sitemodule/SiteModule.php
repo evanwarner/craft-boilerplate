@@ -21,8 +21,7 @@ class SiteModule extends Module
     // Static Properties =======================================================
 
     /**
-     * Static property that is an instance of this module class so that it can
-     * be accessed via SiteModule::$instance
+     * Provides access to this module via `SiteModule::$instance`.
      *
      * @var SiteModule
      */
