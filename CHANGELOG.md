@@ -1,14 +1,23 @@
 # Changelog
 
 ## Unreleased
+_No unreleased changes._
+
+
+## 2.1.0 - 2020-10-13
+### Added
+- Added a default Redactor config file
+- Configure the application ID in `app.php` (from official Craft starter project)
+
 ### Changed
 - The commit tasks no longer utilize an `all` git remote, and just utilize `origin`
 - Deleted the legacy.css file, as I no longer support any browsers it was meant for
 - Updated the format of the `humans.txt` file
 - The `humans.txt` file is now generated through a custom route and a template
+- Use `App::env()` in place of `getenv()` (from official Craft starter project)
 
 ### Updated
-- Craft to v3.5.12
+- Craft to v3.5.12.1
 - Redactor to v2.8.1
 - caniuse-lite to v1.0.30001142
 - eslint to v7.10.0
