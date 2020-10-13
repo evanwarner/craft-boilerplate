@@ -1,14 +1,15 @@
-@import "helpers/fonts.css";
-@import "helpers/settings.css";
-@import "helpers/form-settings.css";
-@import "helpers/animations.css";
+@import "1-settings/fonts.css";
+@import "1-settings/media-queries.css";
+@import "1-settings/settings.css";
+@import "1-settings/form-settings.css";
 
-@import "global/reset.css";
-@import "global/form-reset.css";
+@import "2-reset/reset.css";
+@import "2-reset/form-reset.css";
 
-@import "global/layout.css";
-@import "global/typography.css";
-@import "global/links.css";
-@import "global/forms.css";
+@import "3-global/layout.css";
+@import "3-global/typography.css";
+@import "3-global/links.css";
+@import "3-global/forms.css";
 
-@import "helpers/utilities.css";
+@import "4-helpers/utilities.css";
+@import "4-helpers/animations.css";

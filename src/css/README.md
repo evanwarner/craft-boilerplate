@@ -88,12 +88,14 @@ Objects that are targeted by JavaScript should have the class name `-js-` as the
 
 CSS should generally be split up into a file-per-component to keep closely-related styles together and independent from non-related code. (This approach also allows easy processing for both http/1 and http/2 production servers.) The exact folder and file structure should be subjectively decided based on the needs of the project, but a good starting point is:
 
-- `/components`
+- `/1-settings`
+- `/2-reset`
+- `/3-global`
+- `/4-helpers`
+- `/5-components`
   - `/content`
   - `/global`
-- `/global`
-- `/helpers`
-- `/pages`
+- `/6-pages`
 
 ---
 

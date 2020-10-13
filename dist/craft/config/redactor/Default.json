@@ -1,0 +1,17 @@
+{
+  "buttons": [
+    "formatting",
+    "unorderedlist",
+    "orderedlist",
+    "bold",
+    "italic",
+    "link",
+    "image"
+  ],
+  "formattingHide": [
+    "h1"
+  ],
+  "plugins": [
+    "fullscreen"
+  ]
+}

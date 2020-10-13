@@ -22,11 +22,7 @@ The following should be completed immediately after generating a new project. On
 1. `$ git init`
 1. `$ git commit --allow-empty -m "Initial commit"`
 1. Add desired remotes
-1. Add alias `all` remote
-    1. `$ git remote add all [origin repo URL]`
-    1. For all remotes (including origin): `$ git remote set-url --add --push all [remote repo URL]`
 1. `$ git push -u origin master`
-1. `$ git push all master`
 1. `$ git checkout -b develop`
 
 #### Structure
@@ -82,4 +78,3 @@ The following should be completed immediately after generating a new project. On
 1. `$ git add -A`
 1. `$ git commit -m "Add and configure site boilerplate"`
 1. `$ git push -u origin develop`
-1. `$ git push all develop`

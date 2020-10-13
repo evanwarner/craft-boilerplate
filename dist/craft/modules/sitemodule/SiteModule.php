@@ -18,19 +18,16 @@ use yii\base\Module;
  */
 class SiteModule extends Module
 {
-    // Static Properties
-    // =========================================================================
+    // Static Properties =======================================================
 
     /**
-     * Static property that is an instance of this module class so that it can
-     * be accessed via SiteModule::$instance
+     * Provides access to this module via `SiteModule::$instance`.
      *
      * @var SiteModule
      */
     public static $instance;
 
-    // Public Methods
-    // =========================================================================
+    // Public Methods ==========================================================
 
     /**
      * Initializes the module.
