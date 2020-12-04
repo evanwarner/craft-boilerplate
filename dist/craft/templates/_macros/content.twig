@@ -1,0 +1,44 @@
+{##
+ # Adds classes to classless elements in markup strings. Intended for use with
+ # output from a Redactor field.
+ #
+ # @param {string} markup
+ #      An HTML string.
+ # @param {array} elements
+ #      A key:value array of element names and the classes to apply to those
+ #      elements. Each key should be a string name of an HTML element, and each
+ #      values should be an array of one or more class name strings.
+#}
+{%- macro addSomeClass(markup, elements) -%}
+  {% set replacements = {} %}
+  {% for element, classes in elements %}
+    {% set replacements = replacements | merge({
+      ('<' ~ element ~ '>'): '<' ~ element ~ ' class="' ~ classes | unique | join(' ') ~ '">'
+    }) %}
+  {% endfor %}
+  {{ markup | replace(replacements) | raw }}
+{%- endmacro -%}
+
+{##
+ # Generates an `<img>` element with attributes for responsive layout.
+ #
+ # @param {\craft\elements\Asset} image
+ #      An image asset.
+ # @param {string} defaultTransform
+ #      The handle of the default transform to use in the `src` attribute.
+ # @param {array} classes
+ #      Classes to be applied to the element.
+ # @param {array} transforms
+ #      Handles for the image transforms to include in the `srcset` attribute.
+ # @param {array} sizes
+ #      Values to list in the `sizes` attribute.
+#}
+{%- macro srcset(image, defaultTransform, classes, transforms, sizes) -%}
+  <img class="{{ classes | unique | join(' ') }}"
+       src="{{ image.getUrl(defaultTransform) }}"
+       srcset="{% for transform in transforms %}
+            {{ image.getUrl(transform) }} {{ image.getWidth(transform) }}w{% if not loop.last %},{% endif %}
+         {% endfor %}"
+       sizes="{{ sizes | join(', ') }}"
+       alt="{{ image.altText }}">
+{%- endmacro -%}
