@@ -21,23 +21,42 @@
 
 
 
-{% set isDirectAccess = entry is defined %}
-{% if isDirectAccess and getenv('ENVIRONMENT') == 'production' %}
-  {# Throw a 404 error if an error entry is directly accessed on production. #}
-  {% exit 404 %}
-{% elseif not isDirectAccess %}
+{% if entry is defined %}
+  {# An error entry was directly accessed for testing. #}
+  {% if getenv('ENVIRONMENT') == 'production' %}
+    {# Throw a 404 error if an error entry is directly accessed on production. #}
+    {% exit 404 %}
+  {% endif %}
+  {% set code = craft.app.request.getQueryParam('code') ?? 0 %}
+  {% set message = craft.app.request.getQueryParam('message') ?? '' %}
+  {% set codeMatch = entry.errorCodes.errorCode(code).one() %}
+  {% set errorTitle = codeMatch.titleOverride ?? entry.title %}
+{% else %}
   {# An actual error occurred. #}
-  {% set status = craft.app.response.statusCode %}
-  {% set entry = craft.entries.section('errorPages').httpStatus(status).one() ?? {
-    type: 'httpError',
-    title: 'Status ' ~ status,
-    errorText: '<p>' ~ craft.app.response.statusText ~ '</p>'
-  } %}
+  {% set entry = craft.entries
+    .section('errorPages')
+    .httpStatus(statusCode)
+    .with([
+      ['errorCodes', {
+        'errorCode': code,
+      }],
+    ])
+    .one()
+  %}
+  {% set codeMatch = entry.errorCodes[0] ?? null %}
+  {% set errorTitle = codeMatch.titleOverride
+    ?? entry.title
+    ?? "Error #{statusCode}: #{craft.app.response.statusText}"
+  %}
+{% endif %}
+{% set errorBody = codeMatch.messageOverride ?? entry.errorMessage %}
+{% if message and (codeMatch.appendOriginalMessage ?? false) or errorBody is empty %}
+  {% set errorBody = errorBody ~ "<p>#{message}</p>" %}
 {% endif %}
 
 
 
 {% block content %}
-  <h1>{{ entry.title }}</h1>
-  {{ entry.errorText | raw }}
+  <h1>{{ errorTitle }}</h1>
+  {{ errorBody | raw }}
 {% endblock %}
