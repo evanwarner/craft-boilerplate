@@ -99,6 +99,8 @@ AddDefaultCharset utf-8
 
 
 <IfModule mod_headers.c>
+  # Opt out of Google FLoC
+  Header always set Permissions-Policy: interest-cohort=()
   # Remove the X-Powered-By response header
   Header unset X-Powered-By
 </IfModule>
