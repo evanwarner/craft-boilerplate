@@ -18,15 +18,6 @@ use yii\base\Module;
  */
 class SiteModule extends Module
 {
-    // Static Properties =======================================================
-
-    /**
-     * Provides access to this module via `SiteModule::$instance`.
-     *
-     * @var SiteModule
-     */
-    public static $instance;
-
     // Public Methods ==========================================================
 
     /**
@@ -46,12 +37,11 @@ class SiteModule extends Module
 
         parent::init();
 
-        self::$instance = $this;
-
-        // Use a custom log file for all modules
+        // Use a custom log file for this module
+        // TODO: rename with the module
         $modulesLogFile = new FileTarget([
             'logFile' => '@storage/logs/site.log',
-            'categories' => ['modules\*']
+            'categories' => ['modules\sitemodule\*'],
         ]);
         Craft::getLogger()->dispatcher->targets[] = $modulesLogFile;
     }
