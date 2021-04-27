@@ -37,10 +37,11 @@ class SiteModule extends Module
 
         parent::init();
 
-        // Use a custom log file for all modules
+        // Use a custom log file for this module
+        // TODO: rename with the module
         $modulesLogFile = new FileTarget([
             'logFile' => '@storage/logs/site.log',
-            'categories' => ['modules\*']
+            'categories' => ['modules\sitemodule\*'],
         ]);
         Craft::getLogger()->dispatcher->targets[] = $modulesLogFile;
     }
