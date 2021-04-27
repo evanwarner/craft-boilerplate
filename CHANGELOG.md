@@ -4,6 +4,33 @@
 _No unreleased changes._
 
 
+## 3.0.0 - 2021-04-26
+### Added
+- Frequently used Twig macros added in `dist/craft/templates/_macros/content.twig`
+- Added a response header to opt out of Google FLoC
+- Implemented custom HTTP error code handling
+
+### Changed
+- Removed the static `$instance` variable from the default module
+- Removed the placeholder for the Safari pinned tab icon
+- The custom module log file is now specific to an individual module
+
+### Fixed
+- The `src/css/components` folder was given a `5-` prefix to put it in line with the other folders
+
+### Updated
+- Craft to v3.6.12 ([#8](https://github.com/evanwarner/craft-boilerplate/issues/8))
+- Redactor to v2.8.6
+- caniuse-lite to v1.0.30001216
+- cssnano to v4.1.11
+- eslint to v7.25.0
+- eslint-plugin-jsdoc to v32.3.2
+- onchange to v7.1.0
+- stylelint to v13.3.0
+- svgo to v2.3.0
+- terser to v5.7.0
+
+
 ## 2.1.0 - 2020-10-13
 ### Added
 - Added a default Redactor config file
