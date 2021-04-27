@@ -43,6 +43,20 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
+  482f7419-6607-4993-ac39-4b81d8113569:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: appendOriginalMessage
+    instructions: 'Append the original error message after this one.'
+    name: 'Append Original Message'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   48298e73-da57-4a43-94d5-99dff6f8354b:
     contentColumnType: text
     fieldGroup: null
@@ -71,20 +85,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  482f7419-6607-4993-ac39-4b81d8113569:
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: appendOriginalMessage
-    instructions: 'Append the original error message after this one.'
-    name: 'Append Original Message'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
   bcfee702-9f82-4ece-8d1b-86b689713f52:
     contentColumnType: text
     fieldGroup: null

@@ -3,12 +3,12 @@ fieldLayouts:
     tabs:
       -
         fields:
-          352696ab-240e-485b-8ed7-6757acb5dd64:
-            required: false
-            sortOrder: 2
           45f71c8f-75d7-40dc-a6f4-3fca21830503:
             required: false
             sortOrder: 1
+          352696ab-240e-485b-8ed7-6757acb5dd64:
+            required: false
+            sortOrder: 2
         name: Content
         sortOrder: 1
 handle: media

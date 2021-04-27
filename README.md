@@ -47,6 +47,7 @@ The following should be completed immediately after generating a new project. On
 #### Project Configuration
 1. Edit the _Project Name_ and _Project Description_ in `README.md`
 1. Set the `name` and `description` in `package.json`
+1. Set the `name` and `description` in `/dist/[craft]/composer.json`
 1. Configure project domains
     - Set the `SITE_URL` in `/dist/[craft]/.env`
     - Set the `start_url` in `/src/manifest.json`
