@@ -4,7 +4,7 @@
  * @link https://www.evanwarner.com
  */
 
-namespace modules\sitemodule;
+namespace modules\site;
 
 use Craft;
 use craft\log\FileTarget;
@@ -16,7 +16,7 @@ use yii\base\Module;
  * @author Evan Warner
  * @since 1.0.0
  */
-class SiteModule extends Module
+class Site extends Module
 {
     // Public Methods ==========================================================
 
@@ -29,20 +29,21 @@ class SiteModule extends Module
         Craft::setAlias('@modules', dirname(__DIR__));
 
         // Set the controllerNamespace based on whether this is a console or web request
+        // TODO: rename with the module
         if (Craft::$app->getRequest()->getIsConsoleRequest()) {
-            $this->controllerNamespace = 'modules\\console\\controllers';
+            $this->controllerNamespace = 'modules\\site\\console\\controllers';
         } else {
-            $this->controllerNamespace = 'modules\\controllers';
+            $this->controllerNamespace = 'modules\\site\\controllers';
         }
 
         parent::init();
 
         // Use a custom log file for this module
         // TODO: rename with the module
-        $modulesLogFile = new FileTarget([
+        $moduleLogFile = new FileTarget([
             'logFile' => '@storage/logs/site.log',
-            'categories' => ['modules\sitemodule\*'],
+            'categories' => ['modules\site\*'],
         ]);
-        Craft::getLogger()->dispatcher->targets[] = $modulesLogFile;
+        Craft::getLogger()->dispatcher->targets[] = $moduleLogFile;
     }
 }
