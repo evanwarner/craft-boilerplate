@@ -15,7 +15,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  f5b61d9c-cbbc-42fc-ad49-6f40d28f7900:
+  f5b61d9c-cbbc-42fc-ad49-6f40d28f7900: # $SITE_NAME
     enabledByDefault: true
     hasUrls: true
     template: _error
