@@ -1,4 +1,4 @@
-dateModified: 1633907401
+dateModified: 1641606655
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: $SYSTEM_SENDER_NAME
@@ -11,6 +11,9 @@ graphql:
   publicToken:
     enabled: false
     expiryDate: null
+meta:
+  __names__:
+    f5b61d9c-cbbc-42fc-ad49-6f40d28f7900: $SITE_NAME # $SITE_NAME
 plugins:
   assetrev:
     edition: standard
@@ -24,7 +27,7 @@ system:
   edition: pro
   live: true
   name: $SYSTEM_NAME
-  schemaVersion: 3.6.8
+  schemaVersion: 3.7.8
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
