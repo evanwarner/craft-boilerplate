@@ -36,6 +36,7 @@ The following should be completed immediately after generating a new project. On
         - `define('CRAFT_BASE_PATH', dirname(__DIR__).'/[craft]');`
     - Update the paths in `.gitignore` to match
     - Update the paths in the _Getting Started_ section in `README.md`
+    - Update the paths in the _File Organization_ section in `README.md`
 1. Ensure permissions of these directories in `/dist/[craft]`
     - `$ chmod 774 storage`
     - `$ chmod 774 vendor`
