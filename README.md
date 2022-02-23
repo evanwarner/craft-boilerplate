@@ -32,8 +32,8 @@ The following should be completed immediately after generating a new project. On
     - Update the paths in the _Getting Started_ section in `README.md`
 1. Rename `/dist/craft` to an appropriate name for this project
     - Update `craft` config variable in `package.json` to match
-    - Update `CRAFT_BASE_PATH` definition in `/dist/[webroot]/index.php` to match:
-        - `define('CRAFT_BASE_PATH', dirname(__DIR__).'/[craft]');`
+    - Update shared bootstrap `require` path in `/dist/[webroot]/index.php` to match:
+        - `require dirname(__DIR__) . '/[craft]/bootstrap.php';`
     - Update the paths in `.gitignore` to match
     - Update the paths in the _Getting Started_ section in `README.md`
     - Update the paths in the _File Organization_ section in `README.md`

@@ -40,7 +40,7 @@ return [
     ],
 
     'staging' => [
-
+        'disallowRobots' => true,
     ],
 
     'production' => [
