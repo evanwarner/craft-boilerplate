@@ -50,7 +50,12 @@
     "function-parentheses-newline-inside": "always-multi-line",
     "function-parentheses-space-inside": "never-single-line",
     "function-url-quotes": "always",
-    "function-whitespace-after": "always",
+    "function-whitespace-after": [
+      "always",
+      {
+        "severity": "warning"
+      }
+    ],
 
     "indentation": [2, {
       "except": ["param"],

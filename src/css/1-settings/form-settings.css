@@ -2,7 +2,7 @@
   /* === Inputs === */
   --disabled-input-bg: #FFF;
 
-  --input-border-color: currentColor;
+  --input-border-color: currentcolor;
   --input-border-style: solid;
   --input-border-width: 1px;
   --base-input-border: var(--input-border-width) var(--input-border-style) var(--input-border-color);

@@ -28,9 +28,9 @@
     "// JAVASCRIPT -------------------------------------------------------": "",
     "prep:js": "mkdir -p ${npm_package_config_webroot}js",
     "dev:js": "npm run prep:js && find src/js -type f -name \"*.js\" -exec npm run dev:js:process -- {} \\;",
-    "dev:js:process": "processJs() { terser $1 -o ${npm_package_config_webroot}js/${1:7} --config-file .terser.json --source-map; }; processJs",
+    "dev:js:process": "processJs() { mkdir -p ${npm_package_config_webroot}js/$(dirname \"${1:7}\"); terser $1 -o ${npm_package_config_webroot}js/${1:7} --config-file .terser.json --source-map; }; processJs",
     "build:js": "npm run prep:js && find src/js -type f -name \"*.js\" -exec npm run build:js:process -- {} \\;",
-    "build:js:process": "processJs() { terser $1 -o ${npm_package_config_webroot}js/${1:7} --config-file .terser.json; }; processJs",
+    "build:js:process": "processJs() { mkdir -p ${npm_package_config_webroot}js/$(dirname \"${1:7}\"); terser $1 -o ${npm_package_config_webroot}js/${1:7} --config-file .terser.json; }; processJs",
     "// COPYING ----------------------------------------------------------": "",
     "copy": "run-p copy:*",
     "copy:images": "rsync -vr src/img ${npm_package_config_webroot} --delete --exclude=\".*\"",
@@ -66,11 +66,11 @@
     "mergeversion": "git checkout master && git merge --no-ff -m \"Merge branch 'develop'\" develop && git tag -a v${npm_package_version} -m \"\" && git push origin master && git push origin v${npm_package_version} && git checkout develop"
   },
   "devDependencies": {
-    "caniuse-lite": "^1.0.30001216",
+    "caniuse-lite": "^1.0.30001312",
     "cssnano": "^4.1.11",
-    "del-cli": "^3.0.1",
-    "eslint": "^7.25.0",
-    "eslint-plugin-jsdoc": "^32.3.2",
+    "del-cli": "^4.0.1",
+    "eslint": "^8.9.0",
+    "eslint-plugin-jsdoc": "^37.9.4",
     "hashmark": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
@@ -80,9 +80,9 @@
     "postcss-preset-env": "^6.7.0",
     "preprocess": "^3.2.0",
     "preprocess-cli-tool": "^1.0.1",
-    "stylelint": "^13.13.0",
-    "stylelint-order": "^4.1.0",
-    "svgo": "^2.3.0",
-    "terser": "^5.7.0"
+    "stylelint": "^14.5.2",
+    "stylelint-order": "^5.0.0",
+    "svgo": "^2.8.0",
+    "terser": "^5.11.0"
   }
 }

@@ -61,7 +61,7 @@ blockquote {
 }
 
 hr {
-  border: .5px solid currentColor;
+  border: .5px solid currentcolor;
 }
 
 
@@ -102,16 +102,6 @@ img {
 
 
 /* === Object States === */
-/*
- * Hide focus outline.
- * TODO: Be sure to declare a noticable style for all focused elements!
- */
-:focus {
-  outline: 0;
-}
-
-
-
 /*
  * Ensure hidden.
  */
@@ -252,6 +242,11 @@ q::after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
 }
 
 

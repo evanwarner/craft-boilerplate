@@ -67,12 +67,10 @@ select:disabled {
 
 
 /*
- * 1. Remove highlight in Firefox.
- * 2. Remove highlight in IE.
+ * Remove highlight in IE.
  */
 :invalid {
-  outline: 0; /* 1 */
-  box-shadow: none; /* 2 */
+  box-shadow: none;
 }
 
 
