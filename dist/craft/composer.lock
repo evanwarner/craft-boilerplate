@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d6166598618a0e34d2a9b5352a1b71a",
+    "content-hash": "5a70a1ca303c4b82f2fbc10dc6239f0f",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -534,6 +534,43 @@
             "time": "2022-02-22T18:34:09+00:00"
         },
         {
+            "name": "craftcms/html-field",
+            "version": "1.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/html-field/zipball/d8ae4e3e4862a008ce50589eb7c90caf4fc0e2a2",
+                "reference": "d8ae4e3e4862a008ce50589eb7c90caf4fc0e2a2",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "craft\\htmlfield\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Base class for Craft CMS field types with HTML values.",
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/html-field/issues?state=open",
+                "source": "https://github.com/craftcms/html-field",
+                "docs": "https://github.com/craftcms/html-field/blob/main/README.md",
+                "rss": "https://github.com/craftcms/html-field/commits/main.atom"
+            },
+            "time": "2022-02-16T09:33:08+00:00"
+        },
+        {
             "name": "craftcms/oauth2-craftid",
             "version": "1.0.0.1",
             "dist": {
@@ -611,20 +648,16 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.8.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/craftcms/redactor.git",
-                "reference": "c0272678a9d9bdc3990b36079e42667acdcd7016"
-            },
+            "version": "2.10.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/c0272678a9d9bdc3990b36079e42667acdcd7016",
-                "reference": "c0272678a9d9bdc3990b36079e42667acdcd7016",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/d77630362e415ee95cbf7aa95b746bbfe8c30232",
+                "reference": "d77630362e415ee95cbf7aa95b746bbfe8c30232",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.5.0"
+                "craftcms/cms": "^3.6.0",
+                "craftcms/html-field": "^1.0.4"
             },
             "type": "craft-plugin",
             "extra": {
@@ -637,7 +670,6 @@
                     "craft\\redactor\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -649,20 +681,20 @@
             ],
             "description": "Edit rich text content in Craft CMS using Redactor by Imperavi.",
             "keywords": [
-                "Redactor",
                 "cms",
                 "craftcms",
                 "html",
+                "redactor",
                 "yii2"
             ],
             "support": {
-                "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
                 "email": "support@craftcms.com",
                 "issues": "https://github.com/craftcms/redactor/issues?state=open",
-                "rss": "https://github.com/craftcms/redactor/commits/v2.atom",
-                "source": "https://github.com/craftcms/redactor"
+                "source": "https://github.com/craftcms/redactor",
+                "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
+                "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
             },
-            "time": "2021-08-02T08:18:53+00:00"
+            "time": "2022-02-18T07:29:48+00:00"
         },
         {
             "name": "craftcms/server-check",
