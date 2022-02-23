@@ -30,6 +30,9 @@ return [
     ],
 
     'dev' => [
+        'aliases' => [
+            '@webroot' => dirname(__DIR__, 2) . '/webroot',
+        ],
         'allowAdminChanges' => true,
         'allowUpdates' => true,
         'devMode' => true,
