@@ -118,6 +118,8 @@
     "arrow-spacing": "warn",
     "no-duplicate-imports": "warn",
     "rest-spread-spacing": "warn",
-    "template-curly-spacing": "warn"
+    "template-curly-spacing": "warn",
+    // JSDoc styles
+    "jsdoc/tag-lines": ["warn", "any"]
   }
 }

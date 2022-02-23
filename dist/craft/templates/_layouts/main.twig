@@ -51,8 +51,10 @@
       {# TODO: generate Android home screen icons (and theme colors) #}<link rel="manifest" href="/manifest.json">
       <meta name="apple-mobile-web-app-title" content="{{ siteName }}">
 
+      {# TODO: set theme color #}<meta name="theme-color" content="#FFF">
+
       <script type="text/javascript">
-        !function(){var h=document.documentElement.classList;h.remove('no-js');h.add('js');}();
+        !function(){let h=document.documentElement.classList;h.replace('no-js','js');}();
       </script>
 
       <script defer src="{{ rev('js/main.js') }}"></script>

@@ -6,6 +6,7 @@
 #}
 {% set cspDirectives = {
   'default-src': '\'self\'',
+  'img-src': '\'self\' data:',
   'script-src': '\'self\' \'unsafe-inline\'',
   'style-src': '\'self\' \'unsafe-inline\'',
   'object-src': '\'none\'',
@@ -35,7 +36,7 @@
 
 
 {# TODO: meta titles #}
-{% if entry is defined and entry and entry.type == 'home' %}
+{% if entry is defined and entry and entry.type == 'homepage' %}
   {% set metaTitle = metaTitle ?? siteName %}
 {% else %}
   {% set metaTitle = (metaTitle ?? displayTitle ?? entry.title ?? '') ~ ' | ' ~ siteName %}

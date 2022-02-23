@@ -17,7 +17,7 @@ a[href]::after {
  */
 a[href^="javascript:"]::after,
 a[href^="#"]::after {
-  content: "";
+  content: none;
 }
 
 /*
