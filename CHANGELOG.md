@@ -4,6 +4,42 @@
 _No unreleased changes._
 
 
+## 4.0.0 - 2022-02-22
+### Added
+- Added a default `img-src` value to the CSP header
+- Set the `@webroot` alias for development environments ([#9](https://github.com/evanwarner/craft-boilerplate/issues/9))
+- Added the `theme-color` HTML meta tag to the main layout
+- Padding is now reset to 0 on table cells and headers
+
+### Changed
+- The default module is now just called "Site". The redundant "Module" suffix has been removed.
+- Site names are now set via ENV variables
+- The minimum PHP requirement is now 7.4.2
+- Adopted a shared Craft bootstrap file (from official Craft starter project)
+- Set the `disallowRobots` config setting to `true` for staging environments
+- Removed the focus outline CSS reset
+- Reduced some linter warning severites
+- Brought the `js` class toggle script up to ES6 syntax
+- Improved the site README
+
+### Fixed
+- The homepage entry type check that controls the format of the page title now correctly matches the type set for the entry
+
+### Updated
+- Craft to v3.7.34
+- Redactor to v2.10.3
+- Composer to v2+
+- PHPDotEnv to v5.4.0 (from official Craft starter project)
+- caniuse-lite to v1.0.30001312
+- del-cli to v4.0.1
+- eslint to v8.9.0
+- eslint-plugin-jsdoc to v37.9.4
+- stylelint to v14.5.2
+- stylelint-order to v5.0.0
+- svgo to v2.8.0
+- terser to v5.11.0
+
+
 ## 3.0.0 - 2021-04-26
 ### Added
 - Frequently used Twig macros added in `dist/craft/templates/_macros/content.twig`
