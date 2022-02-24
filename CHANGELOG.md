@@ -4,6 +4,11 @@
 _No unreleased changes._
 
 
+## 4.0.1 - 2022-02-23
+### Fixed
+- Fixed a PHP headers error caused by an errant whitespace
+
+
 ## 4.0.0 - 2022-02-22
 ### Added
 - Added a default `img-src` value to the CSP header
