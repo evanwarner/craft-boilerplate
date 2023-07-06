@@ -9,7 +9,7 @@
 
   /* === Fonts === */
   --primary-font: serif;
-  --monospace-font: monospace;
+  --monospace-font: monospace, _; /* Dummy fallback bypasses browser hardcoded font size overrides. Not needed when specifying a font to use. */
 
 
 
@@ -22,8 +22,8 @@
 
 
   /* === Z-Indexes === */
-  --z-behind: -1;
-  --z-base: 0;
-  --z-bump: 5;
-  --z-top: 100;
+  --Z-BEHIND: -1;
+  --Z-BASE: 0;
+  --Z-BUMP: 5;
+  --Z-TOP: 100;
 }

@@ -17,47 +17,55 @@
 /*
  * These inputs render as textfields in all browsers.
  */
-[type="email"],
-[type="number"],
-[type="password"],
-[type="search"],
-[type="tel"],
-[type="text"],
-[type="url"],
-textarea {
+:where(
+  [type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="url"],
+  textarea
+) {
   border: var(--base-input-border);
 }
 
-[type="email"][readonly],
-[type="number"][readonly],
-[type="password"][readonly],
-[type="search"][readonly],
-[type="tel"][readonly],
-[type="text"][readonly],
-[type="url"][readonly],
-textarea[readonly] {
+:where(
+  [type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="url"],
+  textarea
+):where([readonly]) {
 
 }
 
-[type="email"]:disabled,
-[type="number"]:disabled,
-[type="password"]:disabled,
-[type="search"]:disabled,
-[type="tel"]:disabled,
-[type="text"]:disabled,
-[type="url"]:disabled,
-textarea:disabled {
+:where(
+  [type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="url"],
+  textarea
+):where(:disabled) {
 
 }
 
-[type="email"]:focus,
-[type="number"]:focus,
-[type="password"]:focus,
-[type="search"]:focus,
-[type="tel"]:focus,
-[type="text"]:focus,
-[type="url"]:focus,
-textarea:focus {
+:where(
+  [type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="url"],
+  textarea
+):where(:focus) {
 
 }
 
@@ -70,35 +78,43 @@ textarea:focus {
  * These inputs render as textfields in some browsers and select menus in other
  * browsers. Keep this in mind when styling.
  */
-[type="date"],
-[type="datetime-local"],
-[type="month"],
-[type="time"],
-[type="week"] {
+:where(
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="time"],
+  [type="week"]
+) {
   border: var(--base-input-border);
 }
 
-[type="date"][readonly],
-[type="datetime-local"][readonly],
-[type="month"][readonly],
-[type="time"][readonly],
-[type="week"][readonly] {
+:where(
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="time"],
+  [type="week"]
+):where([readonly]) {
 
 }
 
-[type="date"]:disabled,
-[type="datetime-local"]:disabled,
-[type="month"]:disabled,
-[type="time"]:disabled,
-[type="week"]:disabled {
+:where(
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="time"],
+  [type="week"]
+):where(:disabled) {
 
 }
 
-[type="date"]:focus,
-[type="datetime-local"]:focus,
-[type="month"]:focus,
-[type="time"]:focus,
-[type="week"]:focus {
+:where(
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="time"],
+  [type="week"]
+):where(:focus) {
 
 }
 
@@ -111,11 +127,11 @@ select {
   border: var(--base-input-border);
 }
 
-select:disabled {
+select:where(:disabled) {
 
 }
 
-select:focus {
+select:where(:focus) {
 
 }
 
@@ -124,29 +140,31 @@ select:focus {
 
 
 /* === Buttons === */
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+:where(
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"]
+) {
   display: inline-block;
   border: var(--base-input-border);
 }
 
-button:hover,
-[type="button"]:hover,
-[type="reset"]:hover,
-[type="submit"]:hover,
-button:focus,
-[type="button"]:focus,
-[type="reset"]:focus,
-[type="submit"]:focus {
+:where(
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"]
+):where(:hover, :focus) {
 
 }
 
-button:disabled,
-[type="button"]:disabled,
-[type="reset"]:disabled,
-[type="submit"]:disabled {
+:where(
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"]
+):where(:disabled) {
 
 }
 
@@ -158,17 +176,16 @@ button:disabled,
 /*
  * 1. Set fallback in case image doesn't load.
  */
-[type="image"] {
+:where([type="image"]) {
   background-color: #000; /* 1 */
   color: #FFF; /* 1 */
 }
 
-[type="image"]:hover,
-[type="image"]:focus {
+:where([type="image"]):where(:hover, :focus) {
 
 }
 
-[type="image"]:disabled {
+:where([type="image"]:disabled) {
 
 }
 
@@ -177,7 +194,7 @@ button:disabled,
 
 
 /* === File Inputs === */
-[type="file"] {
+:where([type="file"]) {
 
 }
 
@@ -189,27 +206,27 @@ button:disabled,
   border: var(--base-input-border);
 }
 
-[type="file"]:focus {
+:where([type="file"]:focus) {
 
 }
 
-:focus::-webkit-file-upload-button {
-
-}
-/* ...continued (browser-specific) */
-:focus::-ms-browse {
-
-}
-
-[type="file"]:disabled {
-
-}
-
-:disabled::-webkit-file-upload-button {
+:where(:focus)::-webkit-file-upload-button {
 
 }
 /* ...continued (browser-specific) */
-:disabled::-ms-browse {
+:where(:focus)::-ms-browse {
+
+}
+
+:where([type="file"]):disabled {
+
+}
+
+:where(:disabled)::-webkit-file-upload-button {
+
+}
+/* ...continued (browser-specific) */
+:where(:disabled)::-ms-browse {
 
 }
 
@@ -218,10 +235,10 @@ button:disabled,
 
 
 /* === Range Inputs === */
-[type="range"] {
+:where([type="range"]) {
 
 }
 
-[type="range"]:disabled {
+:where([type="range"]:disabled) {
 
 }

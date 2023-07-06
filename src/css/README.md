@@ -2,13 +2,12 @@
 
 CSS for this project uses native CSS syntax, with some future-ready syntax enabled by a few PostCSS plugins. The philosophy being that once a feature becomes supported by a project's supported browsers, the PostCSS processing of the syntax can be disabled, leaving the syntax as-authored. The following future syntax is allowed in the codebase:
 
-- [custom properties](https://preset-env.cssdb.org/features#custom-properties)
+- [space-separated color notation](https://preset-env.cssdb.org/features/#color-functional-notation)
 - [custom media queries](https://preset-env.cssdb.org/features#custom-media-queries)
 - [custom selectors](https://preset-env.cssdb.org/features#custom-selectors)
-- the `:matches()` [pseudo-class](https://preset-env.cssdb.org/features#matches-pseudo-class)
-- multiple selectors within the `:not()` [pseudo-class](https://preset-env.cssdb.org/features#not-pseudo-class)
-- [case-insensitive attribute selector matching](https://preset-env.cssdb.org/features#case-insensitive-attributes)
+- [media query ranges](https://preset-env.cssdb.org/features/#media-query-ranges)
 - [nesting rules](https://preset-env.cssdb.org/features#nesting-rules)
+- multiple selectors within the `:not()` [pseudo-class](https://preset-env.cssdb.org/features#not-pseudo-class)
 
 CSS is broken up into separate logical files for ease of authoring, and [PostCSS Import](https://github.com/postcss/postcss-import) is used to concatenate files together into the production-ready stylesheet. Necessary vendor prefixes for supported browsers are automatically applied via Autoprefixer during the build process.
 
@@ -54,9 +53,9 @@ RegEx pattern for qualifying variant class names:
 
 ### Object state classes
 
-**Important:** State changes of an object should be indicated by setting/changing the relevant `aria-*` attribute, if one exists.
+**Important:** State changes of an object should be indicated by setting/changing the relevant HTML attribute (including `aria-*`), if one exists.
 
-If a relevant `aria-*` attribute does _not_ exist, runtime state changes of an object are signified by toggling a state class (not a `-variant` class). The class should be a hyphenated boolean-like statement in the form of `verb-stateDescriptor`, the latter part being camelCase (e.g. `is-filled` or `has-multipleChildren`).
+If a relevant attribute does _not_ exist, runtime state changes of an object are signified by toggling a state class (not a `-variant` class). The class should be a hyphenated boolean-like statement in the form of `verb-stateDescriptor`, the latter part being camelCase (e.g. `is-filled` or `has-multipleChildren`).
 
 RegEx pattern for qualifying object state class names:  
 `[a-z]+-[a-z][a-zA-Z0-9]+`

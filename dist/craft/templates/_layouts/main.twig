@@ -11,7 +11,7 @@
 
       <title>{{ metaTitle }}</title>
       {% if metaDescription %}
-        <meta name="description" content="{{ metaDescription }}">
+        <meta property="og:description" name="description" content="{{ metaDescription }}">
       {% endif %}
 
       <meta name="referrer" content="{{ metaReferrer }}">
@@ -32,9 +32,6 @@
         <meta property="og:url" content="{{ canonicalUrl ?? craft.app.request.absoluteUrl }}">
         <meta property="og:site_name" content="{{ siteName }}">
         <meta property="og:title" content="{{ metaTitle }}">
-        {% if metaDescription %}
-          <meta property="og:description" content="{{ metaDescription }}">
-        {% endif %}
         <meta property="og:locale" content="{{ currentLanguage }}">
         <meta property="og:image" content="">
 
@@ -45,13 +42,13 @@
       {% endif %}
 
       {# TODO: generate a 32x32 favicon.ico in webroot #}
-      {# TODO: generate SVG favicon #}<link rel="icon" href="/favicon.svg">
-      {# TODO: generate Web Clip icon #}<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
-      {# TODO: generate Windows Tile icons (and tile color) #}<meta name="msapplication-config" content="/ieconfig.xml">
-      {# TODO: generate Android home screen icons (and theme colors) #}<link rel="manifest" href="/manifest.json">
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg">{# TODO: generate SVG favicon #}
+      <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">{# TODO: generate Web Clip icon #}
+      <meta name="msapplication-config" content="/ieconfig.xml">{# TODO: generate Windows Tile icons (and tile color) #}
+      <link rel="manifest" href="/manifest.json">{# TODO: generate Android home screen icons (and theme colors) #}
       <meta name="apple-mobile-web-app-title" content="{{ siteName }}">
 
-      {# TODO: set theme color #}<meta name="theme-color" content="#FFF">
+      <meta name="theme-color" content="#FFF">{# TODO: set theme color #}
 
       <script type="text/javascript">
         !function(){let h=document.documentElement.classList;h.replace('no-js','js');}();

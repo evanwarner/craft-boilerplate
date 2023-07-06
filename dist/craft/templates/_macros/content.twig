@@ -40,5 +40,7 @@
             {{ image.getUrl(transform) }} {{ image.getWidth(transform) }}w{% if not loop.last %},{% endif %}
          {% endfor %}"
        sizes="{{ sizes | join(', ') }}"
+       width="{{ image.getWidth(defaultTransform) }}"
+       height="{{ image.getHeight(defaultTransform) }}"
        alt="{{ image.altText }}">
 {%- endmacro -%}

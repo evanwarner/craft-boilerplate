@@ -1,5 +1,6 @@
+defaultPlacement: end
 enableVersioning: true
-handle: homepage
+handle: home
 name: Homepage
 previewTargets:
   -

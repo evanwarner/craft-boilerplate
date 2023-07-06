@@ -3,8 +3,8 @@
   "description": "A Craft CMS website",
   "require": {
     "clubstudioltd/craft-asset-rev": "6.0.2",
-    "craftcms/cms": "3.7.34",
-    "craftcms/redactor": "2.10.3",
+    "craftcms/cms": "3.8.15",
+    "craftcms/redactor": "2.10.12",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
