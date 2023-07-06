@@ -1,7 +1,0 @@
-handle: homepage
-hasTitleField: false
-name: Homepage
-section: 6cd4b061-54b8-4957-a1d6-36d9b8bc53af
-sortOrder: 1
-titleFormat: '{section.name|raw}'
-titleLabel: null

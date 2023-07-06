@@ -36,7 +36,7 @@
 
 
 {# TODO: meta titles #}
-{% if entry is defined and entry and entry.type == 'homepage' %}
+{% if entry is defined and entry and entry.type == 'home' %}
   {% set metaTitle = metaTitle ?? siteName %}
 {% else %}
   {% set metaTitle = (metaTitle ?? displayTitle ?? entry.title ?? '') ~ ' | ' ~ siteName %}
