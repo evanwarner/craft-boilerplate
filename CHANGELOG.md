@@ -3,6 +3,40 @@
 ## Unreleased
 _No unreleased changes._
 
+## 5.0.0 - 2023-07-06
+### Added
+- The `srcset` macro now adds `width` and `height` attributes to the image tag
+
+### Changed
+- The handle for the Homepage entry is now `home` (was `homepage`)
+- Combined the `og:description` and normal meta description tags
+- Reduced the specificity on many CSS reset selectors
+- `optgroup` elements now have their margin and font family reset
+- Reconfigured PostCSS and Browserslist for the current state of browser support
+- CSS custom properties that are intended to be used like constants are now named in all uppercase
+- Removed `touch-action: manipulation` declarations in the CSS reset
+- Removed the CSS @viewport rules
+
+### Fixed
+- Prevent potential font size issue with monospace fonts
+
+### Updated
+- Craft to v3.8.15
+- Redactor to v2.10.12
+- caniuse-lite to v1.0.30001442
+- cssnano to v5.1.14
+- del-cli to v5.0.0
+- eslint to v8.31.0
+- eslint-plugin-jsdoc to v39.6.4
+- postcss to v8.4.21
+- postcss-cli to v10.1.0
+- postcss-import to v15.1.0
+- postcss-preset-env to v7.8.3
+- stylelint to v14.16.1
+- stylelint-order to v6.0.1
+- svgo to v3.0.2
+- terser to v5.16.1
+
 
 ## 4.0.1 - 2022-02-23
 ### Fixed
