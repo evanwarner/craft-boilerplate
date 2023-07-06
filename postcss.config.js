@@ -3,15 +3,12 @@ module.exports = ctx => ({
   plugins: [
     require('postcss-import')(),
     require('postcss-preset-env')({
-      stage: 3,
+      stage: false,
       features: {
-        'case-insensitive-attributes': true,
+        'color-functional-notation': true,
         'custom-media-queries': true,
-        'custom-properties': {
-          'preserve': false
-        },
         'custom-selectors': true,
-        'matches-pseudo-class': true,
+        'media-query-ranges': true,
         'nesting-rules': true,
         'not-pseudo-class': true
       }

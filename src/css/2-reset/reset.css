@@ -1,33 +1,3 @@
-/* === Viewport === */
-/*
- * Tell browsers to always display at the device size.
- */
-@-ms-viewport {
-  zoom: 1;
-  width: device-width;
-}
-
-@-o-viewport {
-  zoom: 1;
-  width: device-width;
-}
-
-@viewport {
-  zoom: 1;
-  width: device-width;
-}
-
-/*
- * Fix IE bug triggered by setting the viewport via @-ms-viewport rules.
- */
-html {
-  -ms-overflow-style: scrollbar;
-}
-
-
-
-
-
 /* === Layout === */
 /*
  * Reset box model.
@@ -105,7 +75,7 @@ img {
 /*
  * Ensure hidden.
  */
-[hidden] {
+:where([hidden]) {
   display: none !important;
 }
 
@@ -226,11 +196,11 @@ small {
  * 1: https://www.w3.org/TR/html52/textlevel-semantics.html#the-q-element
  * 2: https://drafts.csswg.org/css-ui-4/#content-selection
  */
-q::before {
+:where(q)::before {
   content: no-open-quote;
 }
 
-q::after {
+:where(q)::after {
   content: no-close-quote;
 }
 
@@ -256,19 +226,6 @@ th {
  */
 th {
   text-align: left;
-}
-
-
-
-
-
-/* === Interaction === */
-/*
- * Eliminate touch delay in certain browsers.
- */
-[role="button"],
-a {
-  touch-action: manipulation;
 }
 
 
