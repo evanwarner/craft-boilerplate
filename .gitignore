@@ -8,8 +8,6 @@ node_modules/
 /dist/craft/*.env
 !/dist/craft/example.env
 /dist/craft/config/license.key
-/database-backups/
-/dbbackup.sh
 
 # nonessential Craft files
 /dist/craft/storage/backups/

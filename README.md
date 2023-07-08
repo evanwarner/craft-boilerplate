@@ -68,7 +68,6 @@ The following should be completed immediately after generating a new project. On
 1. Create the database
     - Suggested db name: [project]_craft_dev
     - Set the database information in `/dist/[craft]/.env`
-    - Set the database information in `/dbbackup.sh`
 1. Create a `SECURITY_KEY` in `/dist/[craft]/.env`
     - `$ cd dist/[craft] && ./craft setup/security-key` (or generate one manually)
 1. Run the Craft installation at `http://[local hostname]/manage`

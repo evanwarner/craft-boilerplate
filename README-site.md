@@ -25,8 +25,6 @@ After installing the requirements and cloning this repository in its latest stat
 1. Set up a host for local development and configure the `SITE_URL` in `/dist/[craft]/.env`
 1. Create an empty MySQL database and a user for the database
     1. Set the database information in `/dist/[craft]/.env`
-    1. Duplicate `/dbbackup-example.sh` as `dbbackup.sh` (leave the example unedited in Git)
-    1. Set the database information in `/dbbackup.sh`
 1. Sync information from the current master version of the website (this may be dev, staging, or production depending on the current state of the project)
     1. Populate the database using an up to date DB dump
     1. Ensure `DB_TABLE_PREFIX` is set appropriately in `/dist/[craft]/.env`
