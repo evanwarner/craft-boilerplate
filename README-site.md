@@ -40,8 +40,8 @@ After installing the requirements and cloning this repository in its latest stat
 
 ## File Organization
 The primary files for making changes to the site can be found in the following places:
-- `/src/css/` - The source CSS files. These are compiled by the build scripts into `/dist/webroot/css/`.
-- `/src/js/` - The source JavaScript files. These are compiled by the build scripts into `/dist/webroot/js/`.
+- `/src/css/` - The source CSS files. These are compiled by the build scripts into `/dist/[webroot]/css/`.
+- `/src/js/` - The source JavaScript files. These are compiled by the build scripts into `/dist/[webroot]/js/`.
 - `/dist/[craft]/templates/` - The Twig layout templates for the front-end.
 - `/dist/[craft]/modules/` - The back-end business functionality.
 
@@ -116,9 +116,6 @@ There are additional useful directives for preprocessing files. A reference of a
 - iOS Safari: [latest version]
 - Chrome for Android: [latest version]
 - Edge: [latest version]
-
-### Minor Support
-- Internet Explorer: 11
 
 
 ---

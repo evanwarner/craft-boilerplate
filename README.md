@@ -19,31 +19,31 @@ composer create-project evanwarner/craft-boilerplate <path>
 The following should be completed immediately after generating a new project. Once complete, this file can be deleted.
 
 #### GIT
-1. `$ git init`
-1. `$ git commit --allow-empty -m "Initial commit"`
+1. `cd` into the project root
+1. `git init`
+1. `git commit --allow-empty -m "Initial commit"`
 1. Add desired remotes
-1. `$ git push -u origin master`
-1. `$ git checkout -b develop`
+1. `git push -u origin master`
+1. `git checkout -b develop`
 
 #### Structure
-1. Rename `/dist/webroot` to an appropriate name for this project
-    - Update `webroot` config variable in `package.json` to match
+1. Rename `/dist/webroot` to an appropriate name for this project (to match the production server)
+    - Update the `webroot` config variable in `package.json` to match
     - Update the paths in `.gitignore` to match
-    - Update the paths in the _Getting Started_ section in `README.md`
-1. Rename `/dist/craft` to an appropriate name for this project
-    - Update `craft` config variable in `package.json` to match
-    - Update shared bootstrap `require` path in `/dist/[webroot]/index.php` to match:
+    - Update the paths in the _Getting Started_ section in `README.md` to match
+1. **(Optional)** You may rename `/dist/craft` to an appropriate name for this project
+    - Update the `craft` config variable in `package.json` to match
+    - Update the shared bootstrap `require` path in `/dist/[webroot]/index.php` to match:
         - `require dirname(__DIR__) . '/[craft]/bootstrap.php';`
     - Update the paths in `.gitignore` to match
-    - Update the paths in the _Getting Started_ section in `README.md`
-    - Update the paths in the _File Organization_ section in `README.md`
-1. Ensure permissions of these directories in `/dist/[craft]`
-    - `$ chmod 774 storage`
-    - `$ chmod 774 vendor`
-1. Ensure craft console cli (`/dist/[craft]/craft`) is executable
-    - `$ chmod 755 craft`
-1. Ensure database backup script is executable
-    - `$ chmod 755 dbbackup.sh`
+    - Update the paths in the _Getting Started_ section in `README.md` to match
+    - Update the paths in the _File Organization_ section in `README.md` to match
+    - Be aware of this change as you follow the remaining steps in this setup
+1. Ensure permissions of these directories
+    - `chmod 774 /dist/[craft]/storage`
+    - `chmod 774 /dist/[craft]/vendor`
+1. Ensure permissions on the craft cli executable
+    - `chmod 755 /dist/[craft]/craft`
 
 #### Project Configuration
 1. Edit the _Project Name_ and _Project Description_ in `README.md`
@@ -60,22 +60,22 @@ The following should be completed immediately after generating a new project. On
 
 #### Environment Setup
 1. Configure a new local host for development work
-1. From `/dist/[craft]` run `$ composer install`
-1. From the project root run `$ npm install`
-1. From the project root run `$ npm run dev`
+1. From `/dist/[craft]` run `composer install`
+1. From the project root run `npm install`
+1. From the project root run `npm run dev`
 
 #### Craft Setup
 1. Create the database
     - Suggested db name: [project]_craft_dev
     - Set the database information in `/dist/[craft]/.env`
 1. Create a `SECURITY_KEY` in `/dist/[craft]/.env`
-    - `$ cd dist/[craft] && ./craft setup/security-key` (or generate one manually)
+    - `cd dist/[craft] && ./craft setup/security-key` (or generate one manually)
 1. Run the Craft installation at `http://[local hostname]/manage`
 1. In **Settings > General** set the system **Time Zone** appropriately
 1. In **Settings > Sites** set the name of the site group and site as desired
 
 #### GIT Development Branch
 1. Delete this file.
-1. `$ git add -A`
-1. `$ git commit -m "Add and configure site boilerplate"`
-1. `$ git push -u origin develop`
+1. `git add -A`
+1. `git commit -m "Add and configure site boilerplate"`
+1. `git push -u origin develop`
