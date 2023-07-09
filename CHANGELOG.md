@@ -81,7 +81,7 @@ _No unreleased changes._
 
 ## 3.0.0 - 2021-04-26
 ### Added
-- Frequently used Twig macros added in `dist/craft/templates/_macros/content.twig`
+- Frequently used Twig macros added in `craft/templates/_macros/content.twig`
 - Added a response header to opt out of Google FLoC
 - Implemented custom HTTP error code handling
 

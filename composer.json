@@ -5,7 +5,7 @@
   "license": "Unlicense",
   "scripts": {
     "post-create-project-cmd": [
-      "cp ./dist/craft/example.env ./dist/craft/.env",
+      "cp ./craft/example.env ./craft/.env",
       "rm composer.json",
       "rm -rf vendor",
       "rm CHANGELOG.md",
@@ -13,7 +13,7 @@
       "mv README.md SETUP.md",
       "mv README-site.md README.md",
       "npm i",
-      "cd dist/craft && composer install"
+      "cd craft && composer install"
     ]
   }
 }

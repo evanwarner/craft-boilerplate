@@ -21,17 +21,17 @@ Project description
 After installing the requirements and cloning this repository in its latest state, the following steps will get the site up and running.
 
 1. From the project root run `npm install` to install necessary components
-1. Duplicate `/dist/[craft]/example.env` as `/dist/[craft]/.env` (leave the example unedited in Git)
-1. Set up a host for local development and configure the `SITE_URL` in `/dist/[craft]/.env`
+1. Duplicate `/[craft]/example.env` as `/[craft]/.env` (leave the example unedited in Git)
+1. Set up a host for local development and configure the `SITE_URL` in `/[craft]/.env`
 1. Create an empty MySQL database and a user for the database
-    1. Set the database information in `/dist/[craft]/.env`
+    1. Set the database information in `/[craft]/.env`
 1. Sync information from the current master version of the website (this may be dev, staging, or production depending on the current state of the project)
     1. Populate the database using an up to date DB dump
-    1. Ensure `DB_TABLE_PREFIX` is set appropriately in `/dist/[craft]/.env`
-    1. Obtain and set the `SECURITY_KEY` in `/dist/[craft]/.env`
-    1. Obtain `/dist/[craft]/config/license.key`
-    1. Obtain the `/dist/[webroot]/media/` folder
-1. From `/dist/[craft]/` run `composer install` to install project dependencies
+    1. Ensure `DB_TABLE_PREFIX` is set appropriately in `/[craft]/.env`
+    1. Obtain and set the `SECURITY_KEY` in `/[craft]/.env`
+    1. Obtain `/[craft]/config/license.key`
+    1. Obtain the `/[webroot]/media/` folder
+1. From `/[craft]/` run `composer install` to install project dependencies
 1. From the project root run `npm run dev` to compile source files
 
 
@@ -40,10 +40,10 @@ After installing the requirements and cloning this repository in its latest stat
 
 ## File Organization
 The primary files for making changes to the site can be found in the following places:
-- `/src/css/` - The source CSS files. These are compiled by the build scripts into `/dist/[webroot]/css/`.
-- `/src/js/` - The source JavaScript files. These are compiled by the build scripts into `/dist/[webroot]/js/`.
-- `/dist/[craft]/templates/` - The Twig layout templates for the front-end.
-- `/dist/[craft]/modules/` - The back-end business functionality.
+- `/src/css/` - The source CSS files. These are compiled by the build scripts into `/[webroot]/css/`.
+- `/src/js/` - The source JavaScript files. These are compiled by the build scripts into `/[webroot]/js/`.
+- `/[craft]/templates/` - The Twig layout templates for the front-end.
+- `/[craft]/modules/` - The back-end business functionality.
 
 
 ---
