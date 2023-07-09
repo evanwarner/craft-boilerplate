@@ -1,0 +1,29 @@
+name: craft-boilerplate
+type: craftcms
+
+router_http_port: "80"
+router_https_port: "443"
+
+webserver_type: apache-fpm
+php_version: "8.1"
+database:
+    type: mysql
+    version: "8.0"
+
+nodejs_version: "18"
+composer_version: "2"
+docroot: webroot
+composer_root: craft
+web_environment:
+    - CRAFT_CMD_ROOT=./craft
+
+additional_hostnames: []
+additional_fqdns:
+  - craft.boilerplate.local
+
+instrumentation_opt_in: false
+mutagen_enabled: false
+nfs_mount_enabled: false
+timezone: America/Los_Angeles
+use_dns_when_possible: true
+xdebug_enabled: false

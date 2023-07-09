@@ -11,7 +11,9 @@ Project description
     - Full Craft server requirements can be found [here](https://docs.craftcms.com/v3/requirements.html)
 - Node.js
 - NPM
-- Composer
+- [Composer v2](https://getcomposer.org)
+- [Docker](https://www.docker.com)
+- [DDEV](https://ddev.com)
 
 
 ---
@@ -20,18 +22,18 @@ Project description
 ## Getting Started
 After installing the requirements and cloning this repository in its latest state, the following steps will get the site up and running.
 
+1. From `/[craft]/` run `composer install` to install project dependencies
 1. From the project root run `npm install` to install necessary components
 1. Duplicate `/[craft]/example.env` as `/[craft]/.env` (leave the example unedited in Git)
-1. Set up a host for local development and configure the `SITE_URL` in `/[craft]/.env`
-1. Create an empty MySQL database and a user for the database
-    1. Set the database information in `/[craft]/.env`
+1. Configure the `SITE_URL` in `/[craft]/.env` to match the project domain under the `additional_fqdns` config in `/.ddev/config.yaml`
+1. From the project root run `ddev start` to start the local web server
 1. Sync information from the current master version of the website (this may be dev, staging, or production depending on the current state of the project)
-    1. Populate the database using an up to date DB dump
-    1. Ensure `DB_TABLE_PREFIX` is set appropriately in `/[craft]/.env`
     1. Obtain and set the `SECURITY_KEY` in `/[craft]/.env`
+    1. Ensure `DB_TABLE_PREFIX` is set appropriately in `/[craft]/.env`
+    1. Populate the database using an up to date DB dump
+       - `ddev import-db --src=<path-to-db-dump>`
     1. Obtain `/[craft]/config/license.key`
     1. Obtain the `/[webroot]/media/` folder
-1. From `/[craft]/` run `composer install` to install project dependencies
 1. From the project root run `npm run dev` to compile source files
 
 
