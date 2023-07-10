@@ -6,8 +6,8 @@
   "private": true,
   "author": "Evan Warner <evan@evanwarner.com> (https://www.evanwarner.com)",
   "config": {
-    "webroot": "dist/webroot/",
-    "craft": "dist/craft/"
+    "webroot": "webroot/",
+    "craft": "craft/"
   },
   "scripts": {
     "// WORKFLOW ---------------------------------------------------------": "",

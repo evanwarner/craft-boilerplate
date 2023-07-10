@@ -2,25 +2,25 @@
 node_modules/
 
 # Composer
-/dist/craft/vendor/
+/craft/vendor/
 
 # sensitive info
-/dist/craft/*.env
-!/dist/craft/example.env
-/dist/craft/config/license.key
-/database-backups/
-/dbbackup.sh
+/craft/*.env
+!/craft/example.env
+/craft/config/license.key
 
 # nonessential Craft files
-/dist/craft/storage/backups/
-/dist/craft/storage/logs/
-/dist/craft/storage/runtime/
+/craft/storage/backups/
+/craft/storage/composer-backups/
+/craft/storage/config-backups/
+/craft/storage/logs/
+/craft/storage/runtime/
 
 # compiled build assets
-/dist/craft/filerev.json
-/dist/webroot/*
-!/dist/webroot/media
-!/dist/webroot/index.php
+/craft/filerev.json
+/webroot/*
+!/webroot/media
+!/webroot/index.php
 
 # universal
 .idea

@@ -2,6 +2,8 @@
 
 This project serves as a boilerplate to generate a new Craft CMS project through `composer create-project`. It is an opinionated configuration made specifically for how I like to build sites with Craft.
 
+The boilerplate creates a Craft 4.x build with a [DDEV](https://ddev.com) configuration for local development. If you prefer a different local development environment than DDEV, you're free to adjust the setup process accordingly.
+
 
 ---
 
@@ -19,64 +21,73 @@ composer create-project evanwarner/craft-boilerplate <path>
 The following should be completed immediately after generating a new project. Once complete, this file can be deleted.
 
 #### GIT
-1. `$ git init`
-1. `$ git commit --allow-empty -m "Initial commit"`
-1. Add desired remotes
-1. `$ git push -u origin master`
-1. `$ git checkout -b develop`
+1. `cd` into the project root
+1. `git init`
+1. `git commit --allow-empty -m "Initial commit"`
+1. Add desired git remote (assuming named `origin`)
+1. `git push -u origin master`
+1. `git checkout -b develop`
 
 #### Structure
-1. Rename `/dist/webroot` to an appropriate name for this project
-    - Update `webroot` config variable in `package.json` to match
+1. Rename `/webroot` to an appropriate name for this project (to match the production server)
+    - Update the `docroot` config in `/.ddev/config.yaml` to match
+    - Update the `config.webroot` variable in `package.json` to match
+    - Update the `* > aliases > @webroot` path in `/craft/config/general.php` to match
     - Update the paths in `.gitignore` to match
-    - Update the paths in the _Getting Started_ section in `README.md`
-1. Rename `/dist/craft` to an appropriate name for this project
-    - Update `craft` config variable in `package.json` to match
-    - Update shared bootstrap `require` path in `/dist/[webroot]/index.php` to match:
+    - Update the paths in the _Getting Started_ section in `README.md` to match
+1. **(Optional)** You may rename `/craft` to a preferred name for this project
+    - Update the `composer_root` config in `/.ddev/config.yaml` to match
+    - Update the `web_environment > CRAFT_CMD_ROOT` config in `/.ddev/config.yaml` to match
+    - Update the `config.craft` variable in `package.json` to match
+    - Update the shared bootstrap `require` path in `/[webroot]/index.php` to match:
         - `require dirname(__DIR__) . '/[craft]/bootstrap.php';`
     - Update the paths in `.gitignore` to match
-    - Update the paths in the _Getting Started_ section in `README.md`
-    - Update the paths in the _File Organization_ section in `README.md`
-1. Ensure permissions of these directories in `/dist/[craft]`
-    - `$ chmod 774 storage`
-    - `$ chmod 774 vendor`
-1. Ensure craft console cli (`/dist/[craft]/craft`) is executable
-    - `$ chmod 755 craft`
-1. Ensure database backup script is executable
-    - `$ chmod 755 dbbackup.sh`
+    - Update the paths in the _Getting Started_ section in `README.md` to match
+    - Update the paths in the _File Organization_ section in `README.md` to match
+    - Be aware of this change as you follow the remaining steps in this setup
+1. Ensure permissions of these directories
+    - `chmod 774 /[craft]/storage`
+    - `chmod 774 /[craft]/vendor`
+1. Ensure permissions on the craft cli executable
+    - `chmod 755 /[craft]/craft`
 
 #### Project Configuration
 1. Edit the _Project Name_ and _Project Description_ in `README.md`
+1. Edit the `name` config in `/.ddev/config.yaml`
 1. Set the `name` and `description` in `package.json`
-1. Set the `name` and `description` in `/dist/[craft]/composer.json`
-1. Configure project domains
-    - Set the `SITE_URL` in `/dist/[craft]/.env`
-    - Set the `start_url` in `/src/manifest.json`
-1. Set the `SYSTEM_EMAIL` in `/dist/[craft]/.env`
-1. Set the `SYSTEM_SENDER_NAME` in `/dist/[craft]/.env`
-1. Set the `SYSTEM_REPLY_TO_EMAIL` in `/dist/[craft]/.env`
-1. Set the `TEST_EMAIL` in `/dist/[craft]/.env`
+1. Set the `name` and `description` in `/[craft]/composer.json`
+1. Set the `SYSTEM_NAME` in `/[craft]/.env`
+1. Set the `SITE_NAME` in `/[craft]/.env`
+1. Configure the project domains
+    - Edit the project domain under the `additional_fqdns` config in `/.ddev/config.yaml`
+    - Set the `SITE_URL` in `/[craft]/.env`
+    - Set the `start_url` in `/src/manifest.json` to the production domain
+1. Set the `SYSTEM_EMAIL` in `/[craft]/.env`
+1. Set the `SYSTEM_SENDER_NAME` in `/[craft]/.env`
+1. Set the `SYSTEM_REPLY_TO_EMAIL` in `/[craft]/.env`
+1. Set the `TEST_EMAIL` in `/[craft]/.env`
 1. Comment out or delete the www and https rewrite settings in `/src/.htaccess` as desired
 
 #### Environment Setup
-1. Configure a new local host for development work
-1. From `/dist/[craft]` run `$ composer install`
-1. From the project root run `$ npm install`
-1. From the project root run `$ npm run dev`
+1. From `/[craft]/` run `composer install` to install project dependencies
+1. From the project root run `npm install` to install necessary components
+1. From the project root run `npm run dev` to compile source files and watch for changes
+
+#### DDEV
+1. Adjust the additional environment configs (versions, ports) in `/.ddev/config.yaml` as desired
+2. From the project root run `ddev start`
 
 #### Craft Setup
-1. Create the database
-    - Suggested db name: [project]_craft_dev
-    - Set the database information in `/dist/[craft]/.env`
-    - Set the database information in `/dbbackup.sh`
-1. Create a `SECURITY_KEY` in `/dist/[craft]/.env`
-    - `$ cd dist/[craft] && ./craft setup/security-key` (or generate one manually)
+1. Create a `CRAFT_SECURITY_KEY` in `/[craft]/.env`
+    - `cd [craft] && ./craft setup/security-key` (or generate one manually)
 1. Run the Craft installation at `http://[local hostname]/manage`
 1. In **Settings > General** set the system **Time Zone** appropriately
-1. In **Settings > Sites** set the name of the site group and site as desired
+1. In **Settings > Sites** set the **Name** of the site group as desired
+1. In **Settings > Sites** set the **Name** of the primary site to `$SITE_NAME`
+1. In **Settings > Sites** set the **Name** of the primary site to `$SITE_URL`
 
 #### GIT Development Branch
 1. Delete this file.
-1. `$ git add -A`
-1. `$ git commit -m "Add and configure site boilerplate"`
-1. `$ git push -u origin develop`
+1. `git add -A`
+1. `git commit -m "Add and configure site boilerplate"`
+1. `git push -u origin develop`

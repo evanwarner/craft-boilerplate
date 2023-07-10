@@ -6,4 +6,5 @@ postcss.config.js
 src/js/vendor/**/*.js
 
 # build files
-dist/**/*.js
+craft/**/*.js
+webroot/**/*.js
