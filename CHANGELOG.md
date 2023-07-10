@@ -3,6 +3,26 @@
 ## Unreleased
 _No unreleased changes._
 
+## 6.0.0 - 2023-07-10
+This boilerplate is now running Craft 4.x and is preconfigured for local development with DDEV!
+### Added
+- `/.ddev/config.yaml` configuration file for DDEV
+
+### Changed
+- With the upgrade to Craft 4, projects now require PHP ^8.0.2
+- The `/craft` and `/webroot` folders are now top-level to the project (they were previously within a `/dist` folder)
+- Removed `/craft/config/db.php` in favor of the `CRAFT_DB_*` settings in `/craft/.env`
+- Removed the local script for backing up the project database. All backups should be handled through Craft/DDEV.
+- The `@webroot` alias is now set for all environments by default
+- `verificationCodeDuration` is now set to 7 days for all environments by default
+- `defaultSearchTermOptions` now enables "fuzzy" search for all environments by default
+
+### Updated
+- Craft to v4.4.15
+- Asset Rev to v7.0.0
+- Redactor to v3.0.4
+
+
 ## 5.0.0 - 2023-07-06
 ### Added
 - The `srcset` macro now adds `width` and `height` attributes to the image tag
