@@ -12,10 +12,17 @@ use craft\helpers\App;
 
 return [
     '*' => [
+        'aliases' => [
+            '@webroot' => dirname(__DIR__, 2) . '/webroot',
+        ],
         'allowAdminChanges' => false,
         'allowUpdates' => false,
         'cacheDuration' => 'P30D',
         'cpTrigger' => 'manage',
+        'defaultSearchTermOptions' => [
+            'subLeft' => true,
+            'subRight' => true,
+        ],
         'defaultWeekStartDay' => 0,
         'enableGql' => false,
         'errorTemplatePrefix' => '_',
@@ -25,15 +32,14 @@ return [
         'sendPoweredByHeader' => false,
         'upscaleImages' => false,
         'useEmailAsUsername' => true,
+        'verificationCodeDuration' => 'P7D',
     ],
 
     'dev' => [
-        'aliases' => [
-            '@webroot' => dirname(__DIR__, 2) . '/webroot',
-        ],
         'allowAdminChanges' => true,
         'allowUpdates' => true,
         'devMode' => true,
+        'disallowRobots' => true,
         'elevatedSessionDuration' => 'PT1H',
         'maxInvalidLogins' => 1000,
         'testToEmailAddress' => App::env('TEST_EMAIL'),
@@ -45,7 +51,6 @@ return [
     ],
 
     'production' => [
-        'verificationCodeDuration' => 'P7D',
-        'userSessionDuration' => 'PT1H',
+
     ],
 ];
