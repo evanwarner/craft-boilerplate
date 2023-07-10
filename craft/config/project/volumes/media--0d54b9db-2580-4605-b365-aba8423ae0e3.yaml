@@ -2,20 +2,77 @@ fieldLayouts:
   fd2774dd-977c-49d1-815d-06d2793d4dae:
     tabs:
       -
-        fields:
-          45f71c8f-75d7-40dc-a6f4-3fca21830503:
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 3e62aa2f-0263-47ea-a978-528217e89b83
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            attribute: alt
+            class: null
+            cols: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: true
             required: false
-            sortOrder: 1
-          352696ab-240e-485b-8ed7-6757acb5dd64:
+            rows: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AltField
+            uid: f6ff2f2e-0062-46ad-b0a7-18294103dbbc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 352696ab-240e-485b-8ed7-6757acb5dd64 # Caption
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e2e120fc-10b1-4b83-8071-4e1578fbf0f1
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
-        sortOrder: 1
+        uid: 8eb53351-5bd6-411b-84e9-371fea809ac4
+        userCondition: null
+fs: media
 handle: media
-hasUrls: true
 name: Media
-settings:
-  path: '@webroot/media'
 sortOrder: 1
-type: craft\volumes\Local
-url: /media
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: ''

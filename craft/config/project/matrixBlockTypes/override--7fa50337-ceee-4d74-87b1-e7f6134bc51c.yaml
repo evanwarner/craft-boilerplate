@@ -1,11 +1,11 @@
-field: 8390b8f6-4e28-44cd-aa4a-6aa074083c46
+field: 8390b8f6-4e28-44cd-aa4a-6aa074083c46 # Error Codes
 fieldLayouts:
   8b5ccf90-3d1d-439f-97f3-471bce64ae39:
     tabs:
       -
         elements:
           -
-            fieldUid: d8355d36-d3ee-4494-af6a-b09b3fcecaae
+            fieldUid: d8355d36-d3ee-4494-af6a-b09b3fcecaae # Error Code
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: bcfee702-9f82-4ece-8d1b-86b689713f52
+            fieldUid: bcfee702-9f82-4ece-8d1b-86b689713f52 # Title
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 48298e73-da57-4a43-94d5-99dff6f8354b
+            fieldUid: 48298e73-da57-4a43-94d5-99dff6f8354b # Message
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 482f7419-6607-4993-ac39-4b81d8113569
+            fieldUid: 482f7419-6607-4993-ac39-4b81d8113569 # Append Original Message
             instructions: null
             label: null
             required: false
@@ -43,7 +43,8 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  482f7419-6607-4993-ac39-4b81d8113569:
+  482f7419-6607-4993-ac39-4b81d8113569: # Append Original Message
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: appendOriginalMessage
@@ -57,7 +58,8 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  48298e73-da57-4a43-94d5-99dff6f8354b:
+  48298e73-da57-4a43-94d5-99dff6f8354b: # Message
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: messageOverride
@@ -67,7 +69,6 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      cleanupHtml: true
       columnType: text
       configSelectionMode: choose
       defaultTransform: ''
@@ -85,7 +86,8 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  bcfee702-9f82-4ece-8d1b-86b689713f52:
+  bcfee702-9f82-4ece-8d1b-86b689713f52: # Title
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: titleOverride
@@ -99,12 +101,13 @@ fields:
       columnType: null
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  d8355d36-d3ee-4494-af6a-b09b3fcecaae:
+  d8355d36-d3ee-4494-af6a-b09b3fcecaae: # Error Code
+    columnSuffix: null
     contentColumnType: integer(10)
     fieldGroup: null
     handle: errorCode
@@ -115,12 +118,12 @@ fields:
       decimals: 0
       defaultValue: null
       max: null
-      min: '1'
-      prefix: ''
+      min: 1
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: '8'
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number

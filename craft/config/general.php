@@ -22,11 +22,10 @@ return [
         'maxRevisions' => 10,
         'omitScriptNameInUrls' => true,
         'postCpLoginRedirect' => 'entries',
-        'securityKey' => App::env('SECURITY_KEY'),
+        'securityKey' => App::env('CRAFT_SECURITY_KEY'),
         'sendPoweredByHeader' => false,
         'upscaleImages' => false,
         'useEmailAsUsername' => true,
-        'useProjectConfigFile' => true,
     ],
 
     'dev' => [

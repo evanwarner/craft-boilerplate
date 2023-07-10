@@ -1,5 +1,6 @@
+columnSuffix: null
 contentColumnType: string
-fieldGroup: d2f7e89b-4d7d-4548-8549-f4261cc069f4
+fieldGroup: d2f7e89b-4d7d-4548-8549-f4261cc069f4 # Error Pages
 handle: httpStatus
 instructions: 'The HTTP status code this entry should be used for.'
 name: 'HTTP Status'

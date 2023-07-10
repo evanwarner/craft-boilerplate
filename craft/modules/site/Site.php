@@ -7,7 +7,8 @@
 namespace modules\site;
 
 use Craft;
-use craft\log\FileTarget;
+use craft\log\MonologTarget;
+use Psr\Log\LogLevel;
 use yii\base\Module;
 
 /**
@@ -23,7 +24,7 @@ class Site extends Module
     /**
      * Initializes the module.
      */
-    public function init()
+    public function init(): void
     {
         // Set a @modules alias pointed to the modules/ directory
         Craft::setAlias('@modules', dirname(__DIR__));
@@ -40,9 +41,12 @@ class Site extends Module
 
         // Use a custom log file for this module
         // TODO: rename with the module
-        $moduleLogFile = new FileTarget([
-            'logFile' => '@storage/logs/site.log',
+        $moduleLogFile = new MonologTarget([
+            'name' => 'site',
             'categories' => ['modules\site\*'],
+            'level' => LogLevel::INFO,
+            'logContext' => false,
+            'allowLineBreaks' => true,
         ]);
         Craft::getLogger()->dispatcher->targets[] = $moduleLogFile;
     }

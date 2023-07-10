@@ -28,8 +28,8 @@ After installing the requirements and cloning this repository in its latest stat
 1. Configure the `SITE_URL` in `/[craft]/.env` to match the project domain under the `additional_fqdns` config in `/.ddev/config.yaml`
 1. From the project root run `ddev start` to start the local web server
 1. Sync information from the current master version of the website (this may be dev, staging, or production depending on the current state of the project)
-    1. Obtain and set the `SECURITY_KEY` in `/[craft]/.env`
-    1. Ensure `DB_TABLE_PREFIX` is set appropriately in `/[craft]/.env`
+    1. Obtain and set the `CRAFT_SECURITY_KEY` in `/[craft]/.env`
+    1. Ensure `CRAFT_DB_TABLE_PREFIX` is set appropriately in `/[craft]/.env`
     1. Populate the database using an up to date DB dump
        - `ddev import-db --src=<path-to-db-dump>`
     1. Obtain `/[craft]/config/license.key`

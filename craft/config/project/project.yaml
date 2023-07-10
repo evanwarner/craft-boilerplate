@@ -1,4 +1,4 @@
-dateModified: 1688671927
+dateModified: 1688964826
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: $SYSTEM_SENDER_NAME
@@ -7,14 +7,35 @@ email:
   transportSettings:
     command: ''
   transportType: craft\mail\transportadapters\Sendmail
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
+fs:
+  media:
+    hasUrls: true
+    name: Media
+    settings:
+      path: '@webroot/media'
+    type: craft\fs\Local
+    url: /media
 meta:
   __names__:
+    0d54b9db-2580-4605-b365-aba8423ae0e3: Media # Media
+    4bbc4374-2874-42b5-837e-3e7ded6ff886: 'Error Pages' # Error Pages
     6cd4b061-54b8-4957-a1d6-36d9b8bc53af: Homepage # Homepage
+    7fa50337-ceee-4d74-87b1-e7f6134bc51c: Override # Override
+    8af30969-9993-4bd0-9983-003e5634c274: 'Error Message' # Error Message
+    9cf815f5-e99d-43d5-8de9-9fe15de0eee5: Common # Common
+    40af382c-1249-4945-8040-93466fc00aeb: 'HTTP Error' # HTTP Error
     82a4bbd1-2987-42f8-9198-dd14205d7593: Homepage # Homepage
+    482f7419-6607-4993-ac39-4b81d8113569: 'Append Original Message' # Append Original Message
+    7441fd0e-2b40-4000-a659-6e7f4c5b6726: 'Public Schema' # Public Schema
+    8390b8f6-4e28-44cd-aa4a-6aa074083c46: 'Error Codes' # Error Codes
+    48298e73-da57-4a43-94d5-99dff6f8354b: Message # Message
+    352696ab-240e-485b-8ed7-6757acb5dd64: Caption # Caption
+    a7145a7e-c7c8-49cd-8ce8-22971c1b87ba: Images # Images
+    a1992095-17d3-47cd-a6ac-e268f94d2994: 'Primary Site' # Primary Site
+    b2c51e1a-ef5d-4a48-a6f3-8858d2fb91dc: 'HTTP Status' # HTTP Status
+    bcfee702-9f82-4ece-8d1b-86b689713f52: Title # Title
+    d2f7e89b-4d7d-4548-8549-f4261cc069f4: 'Error Pages' # Error Pages
+    d8355d36-d3ee-4494-af6a-b09b3fcecaae: 'Error Code' # Error Code
     f5b61d9c-cbbc-42fc-ad49-6f40d28f7900: $SITE_NAME # $SITE_NAME
 plugins:
   assetrev:
@@ -29,11 +50,12 @@ system:
   edition: pro
   live: true
   name: $SYSTEM_NAME
-  schemaVersion: 3.8.0.1
+  schemaVersion: 4.4.0.4
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
+  deactivateByDefault: false
   defaultGroup: ''
   photoSubpath: users
-  photoVolumeUid: 0d54b9db-2580-4605-b365-aba8423ae0e3
+  photoVolumeUid: 0d54b9db-2580-4605-b365-aba8423ae0e3 # Media
   requireEmailVerification: true

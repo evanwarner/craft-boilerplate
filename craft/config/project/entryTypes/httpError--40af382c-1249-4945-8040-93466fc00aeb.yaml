@@ -4,7 +4,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: b2c51e1a-ef5d-4a48-a6f3-8858d2fb91dc
+            fieldUid: b2c51e1a-ef5d-4a48-a6f3-8858d2fb91dc # HTTP Status
             instructions: null
             label: null
             required: '1'
@@ -32,11 +32,11 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
             warning: null
             width: 100
           -
-            fieldUid: 8af30969-9993-4bd0-9983-003e5634c274
+            fieldUid: 8af30969-9993-4bd0-9983-003e5634c274 # Error Message
             instructions: ''
             label: ''
             required: ''
@@ -49,7 +49,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 8390b8f6-4e28-44cd-aa4a-6aa074083c46
+            fieldUid: 8390b8f6-4e28-44cd-aa4a-6aa074083c46 # Error Codes
             instructions: null
             label: null
             required: false
@@ -62,7 +62,7 @@ fieldLayouts:
 handle: httpError
 hasTitleField: true
 name: 'HTTP Error'
-section: 4bbc4374-2874-42b5-837e-3e7ded6ff886
+section: 4bbc4374-2874-42b5-837e-3e7ded6ff886 # Error Pages
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

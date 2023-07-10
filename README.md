@@ -30,6 +30,7 @@ The following should be completed immediately after generating a new project. On
 1. Rename `/webroot` to an appropriate name for this project (to match the production server)
     - Update the `docroot` config in `/.ddev/config.yaml` to match
     - Update the `config.webroot` variable in `package.json` to match
+    - Update the `dev > aliases > @webroot` path in `/craft/config/general.php` to match
     - Update the paths in `.gitignore` to match
     - Update the paths in the _Getting Started_ section in `README.md` to match
 1. **(Optional)** You may rename `/craft` to a preferred name for this project
@@ -75,7 +76,7 @@ The following should be completed immediately after generating a new project. On
 2. From the project root run `ddev start`
 
 #### Craft Setup
-1. Create a `SECURITY_KEY` in `/[craft]/.env`
+1. Create a `CRAFT_SECURITY_KEY` in `/[craft]/.env`
     - `cd [craft] && ./craft setup/security-key` (or generate one manually)
 1. Run the Craft installation at `http://[local hostname]/manage`
 1. In **Settings > General** set the system **Time Zone** appropriately

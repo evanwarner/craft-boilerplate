@@ -11,6 +11,8 @@ node_modules/
 
 # nonessential Craft files
 /craft/storage/backups/
+/craft/storage/composer-backups/
+/craft/storage/config-backups/
 /craft/storage/logs/
 /craft/storage/runtime/
 
