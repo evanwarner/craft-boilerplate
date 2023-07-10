@@ -22,7 +22,6 @@ return [
         'maxRevisions' => 10,
         'omitScriptNameInUrls' => true,
         'postCpLoginRedirect' => 'entries',
-        'securityKey' => App::env('CRAFT_SECURITY_KEY'),
         'sendPoweredByHeader' => false,
         'upscaleImages' => false,
         'useEmailAsUsername' => true,
