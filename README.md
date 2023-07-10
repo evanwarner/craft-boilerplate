@@ -2,6 +2,8 @@
 
 This project serves as a boilerplate to generate a new Craft CMS project through `composer create-project`. It is an opinionated configuration made specifically for how I like to build sites with Craft.
 
+The boilerplate creates a Craft 4.x build with a [DDEV](https://ddev.com) configuration for local development. If you prefer a different local development environment than DDEV, you're free to adjust the setup process accordingly.
+
 
 ---
 
@@ -30,7 +32,7 @@ The following should be completed immediately after generating a new project. On
 1. Rename `/webroot` to an appropriate name for this project (to match the production server)
     - Update the `docroot` config in `/.ddev/config.yaml` to match
     - Update the `config.webroot` variable in `package.json` to match
-    - Update the `dev > aliases > @webroot` path in `/craft/config/general.php` to match
+    - Update the `* > aliases > @webroot` path in `/craft/config/general.php` to match
     - Update the paths in `.gitignore` to match
     - Update the paths in the _Getting Started_ section in `README.md` to match
 1. **(Optional)** You may rename `/craft` to a preferred name for this project
@@ -69,10 +71,10 @@ The following should be completed immediately after generating a new project. On
 #### Environment Setup
 1. From `/[craft]/` run `composer install` to install project dependencies
 1. From the project root run `npm install` to install necessary components
-1. From the project root run `npm run dev` to compile source files
+1. From the project root run `npm run dev` to compile source files and watch for changes
 
 #### DDEV
-1. Adjust the additional environment configs in `/.ddev/config.yaml` as desired
+1. Adjust the additional environment configs (versions, ports) in `/.ddev/config.yaml` as desired
 2. From the project root run `ddev start`
 
 #### Craft Setup
@@ -80,9 +82,9 @@ The following should be completed immediately after generating a new project. On
     - `cd [craft] && ./craft setup/security-key` (or generate one manually)
 1. Run the Craft installation at `http://[local hostname]/manage`
 1. In **Settings > General** set the system **Time Zone** appropriately
-1. In **Settings > Sites** set the name of the site group as desired
-1. In **Settings > Sites** set the name of the primary site to `$SITE_NAME`
-1. In **Settings > Sites** set the name of the primary site to `$SITE_URL`
+1. In **Settings > Sites** set the **Name** of the site group as desired
+1. In **Settings > Sites** set the **Name** of the primary site to `$SITE_NAME`
+1. In **Settings > Sites** set the **Name** of the primary site to `$SITE_URL`
 
 #### GIT Development Branch
 1. Delete this file.

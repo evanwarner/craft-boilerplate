@@ -7,8 +7,8 @@ Project description
 
 
 ## Requirements
-- PHP 7.4.2 or higher
-    - Full Craft server requirements can be found [here](https://docs.craftcms.com/v3/requirements.html)
+- PHP 8.0.2 or higher
+    - Full Craft server requirements can be found [here](https://craftcms.com/docs/4.x/requirements.html)
 - Node.js
 - NPM
 - [Composer v2](https://getcomposer.org)
@@ -22,10 +22,8 @@ Project description
 ## Getting Started
 After installing the requirements and cloning this repository in its latest state, the following steps will get the site up and running.
 
-1. From `/[craft]/` run `composer install` to install project dependencies
-1. From the project root run `npm install` to install necessary components
 1. Duplicate `/[craft]/example.env` as `/[craft]/.env` (leave the example unedited in Git)
-1. Configure the `SITE_URL` in `/[craft]/.env` to match the project domain under the `additional_fqdns` config in `/.ddev/config.yaml`
+1. Configure the `SITE_URL` in `/[craft]/.env` to match the local project domain under the `additional_fqdns` config in `/.ddev/config.yaml`
 1. From the project root run `ddev start` to start the local web server
 1. Sync information from the current master version of the website (this may be dev, staging, or production depending on the current state of the project)
     1. Obtain and set the `CRAFT_SECURITY_KEY` in `/[craft]/.env`
@@ -34,6 +32,8 @@ After installing the requirements and cloning this repository in its latest stat
        - `ddev import-db --src=<path-to-db-dump>`
     1. Obtain `/[craft]/config/license.key`
     1. Obtain the `/[webroot]/media/` folder
+1. From `/[craft]/` run `composer install` to install project dependencies
+1. From the project root run `npm install` to install necessary components
 1. From the project root run `npm run dev` to compile source files
 
 
@@ -41,9 +41,10 @@ After installing the requirements and cloning this repository in its latest stat
 
 
 ## File Organization
-The primary files for making changes to the site can be found in the following places:
+The primary files for working on the site can be found in the following places:
 - `/src/css/` - The source CSS files. These are compiled by the build scripts into `/[webroot]/css/`.
 - `/src/js/` - The source JavaScript files. These are compiled by the build scripts into `/[webroot]/js/`.
+- `/src/img/` - Image files connected to the _design_ of the site (not content). These are copied by the build scripts into `/[webroot]/img/`.
 - `/[craft]/templates/` - The Twig layout templates for the front-end.
 - `/[craft]/modules/` - The back-end business functionality.
 
@@ -68,9 +69,9 @@ These scripts are used to generate builds of the project for different environme
 ### Versioning Scripts
 These scripts are used when a build of the project is ready for release.
 
-`npm run bump`, `npm run bump:minor`, and `npm run bump:major` should _only_ be run while on the `develop` branch. They will bump the project's version number (at a patch, minor, or major level, respectively), commit the `package*.json` files, and push the commit.
+`npm run bump`, `npm run bump:minor`, and `npm run bump:major` should _only_ be run while on the `develop` branch. They will bump the project's version number (at a patch, minor, or major level, respectively), commit the `package*.json` files, and push the commit. **NOTE: If you have any unstaged changes to `package.json`, you should `git stash` them before running a bump script, and `git stash pop` them afterwards.**
 
-`npm run mergeversion` should usually be run immediately after one of the `bump` scripts. It will merge the `develop` branch into `master`, tag a new version, then push the new tag and `master` branch. Lastly it will re-checkout `develop` to ensure subsequent work isn't accidentally done on `master`.
+`npm run mergeversion` should usually be run immediately after one of the `bump` scripts. It will merge the `develop` branch into `master`, tag a new version, then push the new tag and `master` branch. Lastly it will re-checkout `develop` to ensure subsequent work isn't accidentally done on `master`. **NOTE: If you have any unstaged changes on the `develop` branch, you may need to `git stash` them before running this comand and `git stash pop` them afterwards.**
 
 
 ---
