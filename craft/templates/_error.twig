@@ -23,7 +23,7 @@
 
 {% if entry is defined %}
   {# An error entry was directly accessed for testing. #}
-  {% if getenv('ENVIRONMENT') == 'production' %}
+  {% if getenv('CRAFT_ENVIRONMENT') == 'production' %}
     {# Throw a 404 error if an error entry is directly accessed on production. #}
     {% exit 404 %}
   {% endif %}

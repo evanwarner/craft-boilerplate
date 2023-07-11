@@ -60,7 +60,7 @@
   On production, this default is skipped and only values set in child templates
   will produce a meta robots tag.
 #}
-{% set metaRobots = getenv('ENVIRONMENT') != 'production' ? 'noindex, nofollow' : metaRobots ?? null %}
+{% set metaRobots = getenv('CRAFT_ENVIRONMENT') != 'production' ? 'noindex, nofollow' : metaRobots ?? null %}
 
 
 
