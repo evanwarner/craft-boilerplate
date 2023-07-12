@@ -7,6 +7,7 @@
     "post-create-project-cmd": [
       "cp ./craft/example.env ./craft/.env",
       "rm composer.json",
+      "rm composer.lock",
       "rm -rf vendor",
       "rm CHANGELOG.md",
       "rm LICENSE.md",

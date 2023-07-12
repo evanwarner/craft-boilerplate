@@ -56,6 +56,7 @@ The following should be completed immediately after generating a new project. On
 1. Edit the `name` config in `/.ddev/config.yaml`
 1. Set the `name` and `description` in `package.json`
 1. Set the `name` and `description` in `/[craft]/composer.json`
+1. Set the `CRAFT_APP_ID` in `/[craft]/.env`
 1. Set the `SYSTEM_NAME` in `/[craft]/.env`
 1. Set the `SITE_NAME` in `/[craft]/.env`
 1. Configure the project domains
@@ -69,8 +70,6 @@ The following should be completed immediately after generating a new project. On
 1. Comment out or delete the www and https rewrite settings in `/src/.htaccess` as desired
 
 #### Environment Setup
-1. From `/[craft]/` run `composer install` to install project dependencies
-1. From the project root run `npm install` to install necessary components
 1. From the project root run `npm run dev` to compile source files and watch for changes
 
 #### DDEV
@@ -79,12 +78,12 @@ The following should be completed immediately after generating a new project. On
 
 #### Craft Setup
 1. Create a `CRAFT_SECURITY_KEY` in `/[craft]/.env`
-    - `cd [craft] && ./craft setup/security-key` (or generate one manually)
+    - `ddev craft setup/security-key` (or generate one manually)
 1. Run the Craft installation at `http://[local hostname]/manage`
+    - Set the **Name** of the primary site to `$SITE_NAME`
+    - Set the **URL** of the primary site to `$SITE_URL`
 1. In **Settings > General** set the system **Time Zone** appropriately
 1. In **Settings > Sites** set the **Name** of the site group as desired
-1. In **Settings > Sites** set the **Name** of the primary site to `$SITE_NAME`
-1. In **Settings > Sites** set the **Name** of the primary site to `$SITE_URL`
 
 #### GIT Development Branch
 1. Delete this file.
