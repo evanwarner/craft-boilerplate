@@ -3,6 +3,11 @@
 ## Unreleased
 _No unreleased changes._
 
+## 6.0.1 - 2023-07-12
+### Fixed
+- Renamed lingering `ENVIRONMENT` .env variable references to `CRAFT_ENVIRONMENT`
+- The `composer.lock` file created during `composer create-project` is now deleted as part of the post-install script
+
 ## 6.0.0 - 2023-07-10
 This boilerplate is now running Craft 4.x and is preconfigured for local development with DDEV!
 ### Added
