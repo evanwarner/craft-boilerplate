@@ -3,6 +3,11 @@
 ## Unreleased
 _No unreleased changes._
 
+## 6.0.2 - 2023-07-31
+### Fixed
+- Fixed a path error when hashing production asset names.
+
+
 ## 6.0.1 - 2023-07-12
 ### Fixed
 - Renamed lingering `ENVIRONMENT` .env variable references to `CRAFT_ENVIRONMENT`
