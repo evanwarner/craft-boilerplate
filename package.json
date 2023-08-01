@@ -52,7 +52,7 @@
     "// HASHING ----------------------------------------------------------": "",
     "hash:css": "npm run hashit -- css/**/*.css",
     "hash:js": "npm run hashit -- js/**/*.js",
-    "hashit": "hashit() { hashmark --cwd ${npm_package_config_webroot} -l 8 \"$1\" \"{dir}/{name}.{hash}{ext}\" -m ../../${npm_package_config_craft}filerev.json; }; hashit",
+    "hashit": "hashit() { hashmark --cwd ${npm_package_config_webroot} -l 8 \"$1\" \"{dir}/{name}.{hash}{ext}\" -m ../${npm_package_config_craft}filerev.json; }; hashit",
     "// VERSIONING -------------------------------------------------------": "",
     "preversion": "npm run lint",
     "bump": "npm run bump:patch",
